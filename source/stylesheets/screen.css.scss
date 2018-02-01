@@ -73,8 +73,12 @@ html, body {
 
   // This is the logo at the top of the ToC
   .logo {
-    display: block;
-    max-width: 100%;
+    display: inline-block;
+    width: 80%;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     margin-bottom: $logo-margin;
   }
 
