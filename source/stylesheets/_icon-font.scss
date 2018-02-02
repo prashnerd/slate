@@ -32,6 +32,19 @@
   @extend %icon;
   content: "\e606";
 }
+/* 
+ICON FROM UNICODE FOR DEVELOPMENT NOTICES 
+OPTIONS:
+U+1F4BB Personal Computer
+U+1F5B3 Old Personal Computer
+U+1F453 Eyeglasses
+U+1F576 Dark Sunglasses
+U+1F913 Nerd Face
+*/
+%icon-dev-sign {
+  @extend %icon;
+  content: "\1F4BB";
+}
 %icon-search {
   @extend %icon;
   content: "\e607";

@@ -37,6 +37,11 @@ Bundle | Project
 Game | Topic
 Challenge | Challenge (unchanged)
 
+<aside class="notice">NOTICE <strong>NOTICE</strong> <em>NOTICE</em></aside>
+<aside class="warning">WARNING <strong>WARNING</strong> <em>WARNING</em></aside>
+<aside class="success">SUCCESS <strong>SUCCESS</strong> <em>SUCCESS</em></aside>
+<aside class="dev">DEV <strong>DEV</strong> <em>DEV</em></aside>
+
 # Authentication<a name="authentication"></a>
 
 > To authorize your requests, pass in a login request to the API server using the following format:
@@ -74,15 +79,15 @@ You can find your API key listed in the project view when logged into the Admin 
 Replace "<code>yourdomain</code>" with your application's domain name!
 </aside>
 
-# Views<a name="views"></a>
+Views<a name="views"></a>
 
-## Challenges<a name="challenges"></a>
+# Challenges<a name="challenges"></a>
 
 Challenges are the lowest level of categorization for the Gametize platform. Challenges are activities for the user to complete, which can range from submitting a photograph and/or a text comment (*Standard Challenges*) to simply clicking on a button (*Confirmation Challenges*) to scanning a QR code (*QR Challenges*).
 
 When a [User](#users) completes a challenge, it referred to as a "**Claim**"". 
 
-### Challenge Profile
+## Challenge Profile
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -115,19 +120,19 @@ something.randomFunc();
 
 This endpoint retrieves the detailed profile of a specific challenge identified by the challenge ID.
 
-#### HTTP Request
+### HTTP Request
 
 `GET https://gametize.com/api2/challenges/ID.json`
 
 <aside class="notice"> Remember to replace "<code>ID</code>" with the desired challenge ID!"</aside>
 
-#### Header(s)
+### Header(s)
 
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Claims
+## Claims
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -160,13 +165,13 @@ something.randomFunc();
 
 This endpoint retrieves the list of claims for a challenge sorted and filtered by the given parameters. 
 
-#### HTTP Request
+### HTTP Request
 
 `GET https://gametize.com/api2/challenges/ID/claims.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired challenge ID!</aside>
 
-#### Parameter(s)
+### Parameter(s)
 
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
@@ -175,12 +180,12 @@ limit | optional | 10 | 5 | Specify the number of results to be displayed on eac
 user_id | optional | 0 | 2 | Filter to get claims from a particular user.
 filter | optional | latest | popular | Filter claims based on content type. Available filters: image.
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Comments
+## Comments
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -213,25 +218,25 @@ something.randomFunc();
 
 This endpoint retrieves the comments on the specified challenge.
 
-#### HTTP Request
+### HTTP Request
 
 `GET https://gametize.com/challenges/ID/comments.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired challenge ID!</aside>
 
-#### Parameter(s)
+### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 
-#### Header(s)
+### Header(s)
 
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Leaderboard
+## Leaderboard
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -262,26 +267,26 @@ something.randomFunc();
 }
 ```
   
-#### HTTP Request
+### HTTP Request
 
 `GET https://gametize.com/api2/challenges/ID/leaderboard.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired challenge ID!</aside>
 
-#### Parameter(s)
+### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-## Users<a name="users"></a>
+# Users<a name="users"></a>
 
-### User Profile
+## User Profile
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -314,25 +319,25 @@ something.randomFunc();
 
 This endpoint retrieves the detailed profile of a user, specified by ID.
 
-#### HTTP Request
+### HTTP Request
 
 `GET https://gametize.com/api2/users/ID.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired user's ID!</aside>
 
-#### Parameter(s)
+### Parameter(s)
 
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 bundle _id | optional | 0 | 3 | Get user data with respect to a specific project. 
 
-#### Header(s)
+### Header(s)
 
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Profile Widget
+## Profile Widget
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -365,22 +370,22 @@ something.randomFunc();
 
 This endpoint retrieves a profile overview of a user, specified by ID. 
 
-#### HTTP Request
+### HTTP Request
 `GET https://gametize.com/api2/users/ID/widget.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
 
-#### Parameter(s)
+### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 game_id | optional | 0 | 3 | Get user data with respect to a game.
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Followers
+## Followers
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -413,23 +418,23 @@ something.randomFunc();
 
 This endpoint retrieves a list of users **who follow the specified user**.
 
-#### HTTP Request
+### HTTP Request
 `GET https://gametize.com/users/ID/followers.json`
 
 <aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
 
-#### Parameter(s)
+### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Following
+## Following
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -462,23 +467,23 @@ something.randomFunc();
 
 This endpoint retrieves a list of users **this user follows**.
 
-#### HTTP Request
+### HTTP Request
 `GET https://gametize.com/users/ID/following.json`
 
 <aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
 
-#### Parameter(s)
+### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Claims
+## Claims
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -564,24 +569,24 @@ something.randomFunc();
 
 The description of this API call goes here.
 
-#### HTTP Request
+### HTTP Request
 `GET https://gametize.com/users/ID/claims.json`
 
 <aside class="notice"> Remember to replace "<code>ID</code>" with the desired template ID!"</aside>
 
-#### Parameter(s)
+### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 filter | optional | null | image | Filter data based on content type. Available options: image.
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Bundles
+## Bundles
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -614,23 +619,23 @@ something.randomFunc();
 
 This endpoints retrieves the list of bundles the user is participating/has participated in.
 
-#### HTTP Request
+### HTTP Request
 `GET https://gametize.com/template/ID/function.json`
 
 <aside class="notice"> Remember to replace "<code>ID</code>" with the desired template ID!"</aside>
 
-#### Parameter(s)
+### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Accepts
+## Accepts
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -663,24 +668,24 @@ something.randomFunc();
 
 This endpoint retrieves a list of challenges that the user has **accepted**.
 
-#### HTTP Request
+### HTTP Request
 `GET https://gametize.com/users/ID/accepts.json`
 
 <aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
 
-#### Parameter(s)
+### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 bundle_id | optional | 0 | 3 | Filter the accepted challenges by a specific bundle.
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Bookmarks
+## Bookmarks
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -711,14 +716,14 @@ something.randomFunc();
 }
 ```
 
-This endpoint retrieves a list of challenges that the user has bookmarked.
+This endpoint retrieves a list of challenges that the user has **bookmarked**.
 
-#### HTTP Request
+### HTTP Request
 `GET https://gametize.com/users/ID/bookmarks.json`
 
 <aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
 
-#### Parameter(s)
+### Parameter(s)
 
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
@@ -726,12 +731,12 @@ page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 bundle_id | optional | 0 | 3 | Filter the bookmarked challenges by a specific bundle.
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Items
+## Items
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -764,17 +769,17 @@ something.randomFunc();
 
 This endpoint retrieves a list of items **earned** by the user. 
 
-#### HTTP Request
+### HTTP Request
 `GET https://gametize.com/users/ID/items.json`
 
 <aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
-### Items Purchased
+## Items Purchased
 
 ```java
 sampleJavaCode obj = new Thing();
@@ -807,39 +812,40 @@ something.randomFunc();
 
 This endpoint gets the list of items **purchased** by the user. Note that the user is prohibited from viewing other users' purchased items.
 
-#### HTTP Request
+### HTTP Request
 `GET https://gametize.com/users/ID/items_purchased.json`
 
 <aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
 
-#### Parameter(s)
+### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specifies which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 bundle_id | optional | 0 | 3 | Filter the purchased items by a specific bundle.
 
-#### Header(s)
+### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | **required** | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
 
 <aside class="warning">Note that in this case the <code>session_key</code> for a user is <strong>REQUIRED</strong>! Failure to provide a valid session_key <b><em>will result in this API call failing</em></b>.</aside>
 
-## Claims<a name="claims"></a>
+# Claims<a name="claims"></a>
 
-## Games<a name="games"></a>
+# Games<a name="games"></a>
 
-## Bundles<a name="bundles"></a>
+# Bundles<a name="bundles"></a>
 
-## Notifications<a name="notifications"></a>
+# Notifications<a name="notifications"></a>
 
-## Items<a name="items"></a>
+# Items<a name="items"></a>
 
-## Teams<a name="teams"></a>
+# Teams<a name="teams"></a>
 
-# Actions<a name="actions"></a>
-## Login<a name="login"></a>
+Actions<a name="actions"></a>
 
-## Action<a name="action"></a>
+# Login<a name="login"></a>
+
+# Action<a name="action"></a>
 
