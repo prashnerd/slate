@@ -1,14 +1,12 @@
 # Errors
 
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
+The Gametize API may return HTTP error codes, and the platform-specific meaning of each possible error code is found here. 
 
-The Kittn API uses the following error codes:
+<aside class="dev">Check for each of the possible <code>HTTP</code> error codes within the API library. The below table is brought over from the vanilla slate repository, and should not be adopted unless verified. <q>418 is <strong>legit</strong> tho</q></aside>
 
 
 Error Code | Meaning
----------- | -------
+---|---
 400 | Bad Request -- Your request is invalid.
 401 | Unauthorized -- Your API key is wrong.
 403 | Forbidden -- The kitten requested is hidden for administrators only.

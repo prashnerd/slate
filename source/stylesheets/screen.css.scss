@@ -58,7 +58,10 @@ html, body {
   left: 0;
   bottom: 0;
   width: $nav-width;
-  background-color: $nav-bg;
+  background-image: url("/images/nav_bar_banner.png");
+  background-repeat: repeat-y;
+  background-attachment: scroll;
+  /*background-color: $nav-bg;*/
   font-size: 13px;
   font-weight: bold;
 
@@ -77,7 +80,7 @@ html, body {
     width: 80%;
     height: auto;
     position: relative;
-    top: 50%;
+    top: 10px; /*Sorry for the absolute value, needs fixing*/
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: $logo-margin;
@@ -87,7 +90,7 @@ html, body {
     position: relative;
 
     input {
-      background: $nav-bg;
+      background: transparent;
       border-width: 0 0 1px 0;
       border-color: $search-box-border-color;
       padding: 6px 0 6px 20px;
@@ -485,6 +488,13 @@ html, body {
     &.dev {
       background-color: $aside-dev-bg;
     }
+
+    &.quote {
+      background-color: $aside-quote-bg;
+      font-family: "Georgia Body", Georgia, serif;
+      font-weight: lighter;
+      font-stretch: ultra-expanded;
+    }
   }
 
   aside:before {
@@ -507,6 +517,10 @@ html, body {
 
   aside.dev:before {
     @extend %icon-dev-sign;
+  }
+
+  aside.quote:before {
+    @extend %icon-quote-sign;
   }
 
   .search-highlight {

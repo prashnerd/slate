@@ -148,4 +148,9 @@ body {
   aside.dev:before {
     @extend %icon-dev-sign;
   }
+
+  aside.quote:before {
+    @extend %icon-quote-sign;
+  }
+
 }

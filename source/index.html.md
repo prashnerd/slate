@@ -17,7 +17,173 @@ includes:
 search: true
 ---
   
-# Introduction<a name="introduction"></a>
+# Introduction
+
+> Gametize API Documentation
+
+```java
+                                                                                 
+       ######    #####    ### ###   #######  ########  #  #######  #######       
+      #      #  #     #  #   #   #  #           #      #       #   #             
+      #         #     #  #   #   #  #           #      #      #    #             
+      #         #######  #   #   #  ######      #      #     #     ######        
+      #    ###  #     #  #   #   #  #           #      #    #      #             
+      #      #  #     #  #   #   #  #           #      #   #       #             
+       ######   #     #  #   #   #  #######     #      #  #######  #######       
+                                                                                 
+                                                                                 
+                ###########################################                      
+              ###############################################                    
+             #################################################                   
+             #################################################                   
+             #################################################                   
+             #################################################                   
+             ###                                           ###                   
+             ##                                             ##                   
+             ##        #####                  #####         ##                   
+             ##       #     #                #     #        ##                   
+             ##                                             ##                   
+             ##                  #      #                   ##                   
+             ##                   ######                    ##                   
+             ###                                           ######                
+              ###################################################                
+                 ###############################################                 
+                ###########################################                      
+              #########################################                          
+            ######  ###################################                          
+           ######   ###################################                          
+           #####    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    #######                     #######                          
+                     ####                         ####                           
+                                                                                 
+```
+
+```python
+                                                                                 
+       ######    #####    ### ###   #######  ########  #  #######  #######       
+      #      #  #     #  #   #   #  #           #      #       #   #             
+      #         #     #  #   #   #  #           #      #      #    #             
+      #         #######  #   #   #  ######      #      #     #     ######        
+      #    ###  #     #  #   #   #  #           #      #    #      #             
+      #      #  #     #  #   #   #  #           #      #   #       #             
+       ######   #     #  #   #   #  #######     #      #  #######  #######       
+                                                                                 
+                                                                                 
+                ###########################################                      
+              ###############################################                    
+             #################################################                   
+             #################################################                   
+             #################################################                   
+             #################################################                   
+             ###                                           ###                   
+             ##                                             ##                   
+             ##        #####                  #####         ##                   
+             ##       #     #                #     #        ##                   
+             ##                                             ##                   
+             ##                  #      #                   ##                   
+             ##                   ######                    ##                   
+             ###                                           ######                
+              ###################################################                
+                 ###############################################                 
+                ###########################################                      
+              #########################################                          
+            ######  ###################################                          
+           ######   ###################################                          
+           #####    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    #######                     #######                          
+                     ####                         ####                           
+                                                                                 
+```
+
+```javascript
+                                                                                 
+       ######    #####    ### ###   #######  ########  #  #######  #######       
+      #      #  #     #  #   #   #  #           #      #       #   #             
+      #         #     #  #   #   #  #           #      #      #    #             
+      #         #######  #   #   #  ######      #      #     #     ######        
+      #    ###  #     #  #   #   #  #           #      #    #      #             
+      #      #  #     #  #   #   #  #           #      #   #       #             
+       ######   #     #  #   #   #  #######     #      #  #######  #######       
+                                                                                 
+                                                                                 
+                ###########################################                      
+              ###############################################                    
+             #################################################                   
+             #################################################                   
+             #################################################                   
+             #################################################                   
+             ###                                           ###                   
+             ##                                             ##                   
+             ##        #####                  #####         ##                   
+             ##       #     #                #     #        ##                   
+             ##                                             ##                   
+             ##                  #      #                   ##                   
+             ##                   ######                    ##                   
+             ###                                           ######                
+              ###################################################                
+                 ###############################################                 
+                ###########################################                      
+              #########################################                          
+            ######  ###################################                          
+           ######   ###################################                          
+           #####    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    #######                     #######                          
+                     ####                         ####                           
+                                                                                 
+```
+
+```shell
+                                                                                 
+       ######    #####    ### ###   #######  ########  #  #######  #######       
+      #      #  #     #  #   #   #  #           #      #       #   #             
+      #         #     #  #   #   #  #           #      #      #    #             
+      #         #######  #   #   #  ######      #      #     #     ######        
+      #    ###  #     #  #   #   #  #           #      #    #      #             
+      #      #  #     #  #   #   #  #           #      #   #       #             
+       ######   #     #  #   #   #  #######     #      #  #######  #######       
+                                                                                 
+                                                                                 
+                ###########################################                      
+              ###############################################                    
+             #################################################                   
+             #################################################                   
+             #################################################                   
+             #################################################                   
+             ###                                           ###                   
+             ##                                             ##                   
+             ##        #####                  #####         ##                   
+             ##       #     #                #     #        ##                   
+             ##                                             ##                   
+             ##                  #      #                   ##                   
+             ##                   ######                    ##                   
+             ###                                           ######                
+              ###################################################                
+                 ###############################################                 
+                ###########################################                      
+              #########################################                          
+            ######  ###################################                          
+           ######   ###################################                          
+           #####    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    ###################################                          
+                    #######                     #######                          
+                     ####                         ####                           
+                                                                                 
+```
 
 <aside class="warning">
 Gametize's current API specification is <strong>only open to licensed applications</strong>, and the instructions below are only applicable to those users. Don't worry though: the platform will soon be open to all!
@@ -25,9 +191,27 @@ Gametize's current API specification is <strong>only open to licensed applicatio
 
 **Introduction to Gametize API** Here are some fluffy words for introducing the Gametize API and explaining how it should be used. This section has been deliberately made longer so that we can see how it looks like when there's more text.
 
-And hey, here's another paragraph to *really* fill this bit out. LALALALA APIs ARE AWSOME WOOOOOOOOO.
+And hey, here's another paragraph to *really* fill this bit out. LALALALA APIs ARE AWSOME WOOOOOOOOO. Do you like my ninja on the right? It did *not* take me all night, I swear! This introduction though. Really feels like the ramblimgs of a madman doesn't it? ***Or*** maybe that's what I *want* you to think! Isn't that *spooooooooky*? Have I written enough yet? Hmm, doesn't quite look like it is... Tell you what: I won't tell if *you* don't!
 
-# Terminology<a name="authentication"></a>
+To fill space To help you understand this document better, here are some examples of the types of "*alerts*" you can expect to see. 
+
+<aside class="notice">NOTICE <em>NOTICE</em> <strong>NOTICE</strong> <strong><em>NOTICE</em></strong> </aside>
+<aside class="warning">WARNING <em>WARNING</em> <strong>WARNING</strong> <strong><em>WARNING</em></strong> </aside>
+<aside class="success">SUCCESS <em>SUCCESS</em> <strong>SUCCESS</strong> <strong><em>SUCCESS</em></strong> </aside>
+
+I MADE THE FOLLOWING TWO MYSELF.
+
+<aside class="dev">DEVELOPMENT NOTES <em>DEVELOPMENT NOTES</em> <strong>DEVELOPMENT NOTES</strong> <strong><em>DEVELOPMENT NOTES</em></strong> </aside>
+<aside class="quote">QUOTE <em>QUOTE</em> <strong>QUOTE</strong> <strong><em>QUOTE</em></strong> </aside>
+
+***PATS SELF ON BACK***
+
+Okay, fine, I *may* have referred to the previous ones ***but still!*** 
+
+> AM I A FRONTEND DEV NOW AAAAAAAAAAHHHHHHHH I FEEL A COMPULSIVE NEED TO FORMAT THINGS!!!
+
+
+# Terminology
 
 To aid in platform administration experience, Gametize has **redefined terms** found in the Admin Dashboard to showcase a more logical correlation between entities. However, **the terms are left unchanged in the API**, as it might be disruptive to live applications. Please take note of the following:
 
@@ -37,85 +221,65 @@ Bundle | Project
 Game | Topic
 Challenge | Challenge (unchanged)
 
-<aside class="notice">NOTICE <strong>NOTICE</strong> <em>NOTICE</em></aside>
-<aside class="warning">WARNING <strong>WARNING</strong> <em>WARNING</em></aside>
-<aside class="success">SUCCESS <strong>SUCCESS</strong> <em>SUCCESS</em></aside>
-<aside class="dev">DEV <strong>DEV</strong> <em>DEV</em></aside>
-
-# Authentication<a name="authentication"></a>
+# Authentication
 
 > To authorize your requests, pass in a login request to the API server using the following format:
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > Make sure to replace `yourkey` with your API key!
 
-In Gametize, all applications using the API are given an **API Key** (data type: `string`). This API key is used to verify the application when a user logs in through it. All actions done by the user through the API (such as claiming, commenting, and voting) use the **Session Key** (data type: `string`) to identify the user. This **Session Key** is returned when the user logs in via the API (refer to code samples). 
+In Gametize, all applications using the API are given an **API Key** (data type: `string`). This API key is used to verify the application when a user logs in through it. All actions done by the user through the API (such as claiming, commenting, and voting) use the **session key** (data type: `string`) to identify the user. This **session key** is returned when the user logs in via the API (refer to code samples on the right). 
 
-<aside class="success"> Following proper security conventions, Gametize recommends passing in your session_key as a HTTP Request <em>header</em> rather than as a <em>parameter</em>, though both are supported. <p><br>To quote Google on this convention:<br><i><q>After an application obtains an access token, it sends the token to a Google API in an HTTP authorization header. It is possible to send tokens as URI-string parameters, but we don't recommend it, because URI parameters can end up in log files that are not completely secure. Also, it is good REST practice to avoid creating unnecessary URI parameter names.</q></i></p></aside>
+<aside class="success"> Following proper security conventions, Gametize recommends passing in your session_key as a HTTP Request <em><strong>header</strong></em> rather than as a <em><strong>parameter</strong></em>, though both are supported.</aside>
 
-You can find your API key listed in the project view when logged into the Admin Dashboard, under the project view. Use a URL in the format `https://yourdomain.com/admin/` to access the Admin Dashboard.
+<aside class="quote"><em>After an application obtains an access token, it sends the token to a Google API in an HTTP authorization header. It is possible to send tokens as URI-string parameters, but we don't recommend it, because URI parameters can end up in log files that are not completely secure. Also, it is good REST practice to avoid creating unnecessary URI parameter names.</em> - <strong>Google, in their <a href="https://developers.google.com/identity/protocols/OAuth2" title="Using OAuth 2.0 to Access Google APIs">OAuth2 API Access Documentation Page</a></strong></aside>
+
+You can find your API key listed in the project view when logged into the Admin Dashboard, under the project view. Use a URL in the format `https://yourdomain.gametize.com/admin/` to access the Admin Dashboard.
 
 <aside class="notice">
 Replace "<code>yourdomain</code>" with your application's domain name!
 </aside>
 
-Views<a name="views"></a>
-
-# Challenges<a name="challenges"></a>
+# Challenges
 
 Challenges are the lowest level of categorization for the Gametize platform. Challenges are activities for the user to complete, which can range from submitting a photograph and/or a text comment (*Standard Challenges*) to simply clicking on a button (*Confirmation Challenges*) to scanning a QR code (*QR Challenges*).
 
-When a [User](#users) completes a challenge, it referred to as a "**Claim**"". 
+When a User completes a challenge, it referred to as a "**claim**"". Claims can vary depending on the challenge type, since it depends on what the user has to submit to complete the challenge.
+
+If a challenge is set to have non-private completions, users may view other users' activity, which allow them to vote and comment on those users' completions.
+
+Collecting the data from claims, votes and comments on a challenge can be a rather slow operation if the project has a lot of users/activity. 
+
+<aside class="quote"><em>It's a happy problem.</em> - <strong>Damon Widjaja, Co-founder of Gametize</strong></aside>
 
 ## Challenge Profile
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-    "claimNo": 0,
-}
 ```
 
 This endpoint retrieves the detailed profile of a specific challenge identified by the challenge ID.
@@ -135,32 +299,20 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 ## Claims
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  json: "example"
-}
 ```
 
 This endpoint retrieves the list of claims for a challenge sorted and filtered by the given parameters. 
@@ -183,37 +335,25 @@ filter | optional | latest | popular | Filter claims based on content type. Avai
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted on the claim.
 
 ## Comments
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  json: "example"
-}
 ```
 
 This endpoint retrieves the comments on the specified challenge.
@@ -234,37 +374,25 @@ limit | optional | 10 | 5 | Specify the number of results to be returned on each
 
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you.
 
 ## Leaderboard
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  json: "example"
-}
 ```
   
 ### HTTP Request
@@ -282,39 +410,27 @@ limit | optional | 10 | 5 | Specify the number of results to be returned on each
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you.
 
-# Users<a name="users"></a>
+# Users
 
 ## User Profile
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  json: "example"
-}
 ```
 
 This endpoint retrieves the detailed profile of a user, specified by ID.
@@ -323,49 +439,37 @@ This endpoint retrieves the detailed profile of a user, specified by ID.
 
 `GET https://gametize.com/api2/users/ID.json`
 
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user's ID!</aside>
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!</aside>
 
 ### Parameter(s)
 
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-bundle _id | optional | 0 | 3 | Get user data with respect to a specific project. 
+bundle _id | optional | 0 | 3 | Get user data in respect to a bundle. For example, returns user points and items in a bundle.
 
 ### Header(s)
 
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data with respect to you. This includes whether you have followed this user or if this user has followed you.
 
 ## Profile Widget
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  template: "example"
-}
 ```
 
 This endpoint retrieves a profile overview of a user, specified by ID. 
@@ -373,7 +477,7 @@ This endpoint retrieves a profile overview of a user, specified by ID.
 ### HTTP Request
 `GET https://gametize.com/api2/users/ID/widget.json`
 
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -383,37 +487,25 @@ game_id | optional | 0 | 3 | Get user data with respect to a game.
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data with respect to you. This includes whether you have followed this user or if this user has followed you.
 
 ## Followers
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  template: "example"
-}
 ```
 
 This endpoint retrieves a list of users **who follow the specified user**.
@@ -421,7 +513,7 @@ This endpoint retrieves a list of users **who follow the specified user**.
 ### HTTP Request
 `GET https://gametize.com/users/ID/followers.json`
 
-<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
+<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -432,37 +524,25 @@ limit | optional | 10 | 5 | Specify the number of results to be returned on each
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data with respect to you. This includes whether you have followed this user or if this user has followed you.
 
 ## Following
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  template: "example"
-}
 ```
 
 This endpoint retrieves a list of users **this user follows**.
@@ -470,7 +550,7 @@ This endpoint retrieves a list of users **this user follows**.
 ### HTTP Request
 `GET https://gametize.com/users/ID/following.json`
 
-<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
+<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -481,90 +561,25 @@ limit | optional | 10 | 5 | Specify the number of results to be returned on each
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have followed this user or if this user has followed you.
 
 ## Claims
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-    "code": 200,
-    "data": [
-        {
-            "bannerImage": "https://s3.amazonaws.com/AKIAIYM3HDTA72TUNOEQ.gamemaki/files/gametize/151165/photos/0_151165_1500611500726.jpg",
-            "private": true,
-            "teamEnabled": false,
-            "description": "Welcome to the quest of becoming a Gametize Grandmaster. To begin, you must learn the ways of the Gametize Ninja to execute your duties with skill, swiftness and precision. \r\n\r\nComplete these tasks well and bring your team to victory. Fulfilling rewards await you. Good luck!",
-            "id": 333,
-            "title": "Onboarding Mission",
-            "searchEnabled": false,
-            "guestEnabled": false
-        },
-        {
-            "bannerImage": "https://s3.amazonaws.com/AKIAIYM3HDTA72TUNOEQ.gamemaki/users/47182/challenges/0_47182_1484903143960.jpg",
-            "private": false,
-            "teamEnabled": false,
-            "description": "This project contains a series of personality quiz demo games for reference.",
-            "id": 1379,
-            "title": "Personality Quiz Demo",
-            "searchEnabled": false,
-            "guestEnabled": false
-        },
-        {
-            "bannerImage": "https://s3.amazonaws.com/AKIAIYM3HDTA72TUNOEQ.gamemaki/users/36404/challenges/0_36404_1394182239366.jpg",
-            "private": false,
-            "teamEnabled": false,
-            "description": "Want to be more attractive in public, and charm the people around you? Unlock your charisma with this game! [Credits to Eric Feng].",
-            "id": 140,
-            "title": "The Charisma Game",
-            "searchEnabled": false,
-            "guestEnabled": false
-        },
-        {
-            "bannerImage": "https://s3.amazonaws.com/AKIAIYM3HDTA72TUNOEQ.gamemaki/users/36304/challenges/0_36304_1449730608862.jpg",
-            "private": false,
-            "teamEnabled": false,
-            "description": "What is Gametize? What exactly do we do, and who are the people behind Gametize? Get to know us better in this section. \r\n\r\nPsst, if you're looking for something specific, you might want to select a Topic Category, to help you in your search!",
-            "id": 826,
-            "title": "The Gametize Handbook",
-            "searchEnabled": false,
-            "guestEnabled": false
-        },
-        {
-            "bannerImage": "https://s3.amazonaws.com/AKIAIYM3HDTA72TUNOEQ.gamemaki/users/47097/challenges/0_47097_1423654909811.png",
-            "private": false,
-            "teamEnabled": false,
-            "description": "This is the World's simplest game to learn Gamification #truestory #gamedesignerin5mins",
-            "id": 671,
-            "title": "The World's Simplest Game",
-            "searchEnabled": false,
-            "guestEnabled": false
-        }
-    ],
-    "more": false
-}
 ```
 
 The description of this API call goes here.
@@ -584,37 +599,25 @@ filter | optional | null | image | Filter data based on content type. Available 
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted on the claim.
 
 ## Bundles
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  template: "example"
-}
 ```
 
 This endpoints retrieves the list of bundles the user is participating/has participated in.
@@ -633,37 +636,25 @@ limit | optional | 10 | 5 | Specify the number of results to be returned on each
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted on the claim.
 
 ## Accepts
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  template: "example"
-}
 ```
 
 This endpoint retrieves a list of challenges that the user has **accepted**.
@@ -671,7 +662,7 @@ This endpoint retrieves a list of challenges that the user has **accepted**.
 ### HTTP Request
 `GET https://gametize.com/users/ID/accepts.json`
 
-<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
+<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -683,37 +674,25 @@ bundle_id | optional | 0 | 3 | Filter the accepted challenges by a specific bund
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have claimed the challenge.
 
 ## Bookmarks
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  template: "example"
-}
 ```
 
 This endpoint retrieves a list of challenges that the user has **bookmarked**.
@@ -721,7 +700,7 @@ This endpoint retrieves a list of challenges that the user has **bookmarked**.
 ### HTTP Request
 `GET https://gametize.com/users/ID/bookmarks.json`
 
-<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
+<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
 ### Parameter(s)
 
@@ -734,37 +713,25 @@ bundle_id | optional | 0 | 3 | Filter the bookmarked challenges by a specific bu
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have claimed the challenge.
 
 ## Items
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  template: "example"
-}
 ```
 
 This endpoint retrieves a list of items **earned** by the user. 
@@ -772,42 +739,30 @@ This endpoint retrieves a list of items **earned** by the user.
 ### HTTP Request
 `GET https://gametize.com/users/ID/items.json`
 
-<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
+<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have earned this item or not.
 
 ## Items Purchased
 
 ```java
-sampleJavaCode obj = new Thing();
 ```
 
 ```python
-sample_python_code = something
-if (!makeSense):
-  too_bad()
-else:
-  hooray()
 ```
 
 ```shell
-sample shell --code="fancy"
 ```
 
 ```javascript
-sample javascript = code;
-something.randomFunc();
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
-{
-  template: "example"
-}
 ```
 
 This endpoint gets the list of items **purchased** by the user. Note that the user is prohibited from viewing other users' purchased items.
@@ -815,7 +770,7 @@ This endpoint gets the list of items **purchased** by the user. Note that the us
 ### HTTP Request
 `GET https://gametize.com/users/ID/items_purchased.json`
 
-<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user's ID!"</aside>
+<aside class="notice"> Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -827,25 +782,228 @@ bundle_id | optional | 0 | 3 | Filter the purchased items by a specific bundle.
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | **required** | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+Authorization | **required** | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have earned this item or not.
 
 <aside class="warning">Note that in this case the <code>session_key</code> for a user is <strong>REQUIRED</strong>! Failure to provide a valid session_key <b><em>will result in this API call failing</em></b>.</aside>
 
-# Claims<a name="claims"></a>
+# Claims
 
-# Games<a name="games"></a>
+## Profile
 
-# Bundles<a name="bundles"></a>
+```java
+```
 
-# Notifications<a name="notifications"></a>
+```python
+```
 
-# Items<a name="items"></a>
+```shell
+```
 
-# Teams<a name="teams"></a>
+```javascript
+```
 
-Actions<a name="actions"></a>
+> The above code returns JSON structured like this:
 
-# Login<a name="login"></a>
+```json
+```
 
-# Action<a name="action"></a>
+This endpoint retrieves the detailed profile of a specific claim.
 
+### HTTP Request
+`GET https://gametize.com/claims/ID.json`
+
+<aside class="notice"> Remember to replace "<code>ID</code>" with the desired claim ID!"</aside>
+
+### Header(s)
+Name | Usage | Default | Example | Description
+---|---|---|---|---
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted on the claim.
+
+## Comments
+
+```java
+```
+
+```python
+```
+
+```shell
+```
+
+```javascript
+```
+
+> The above code returns JSON structured like this:
+
+```json
+```
+
+This endpoint retrieves a list of comments on the specified claim.
+
+### HTTP Request
+`GET https://gametize.com/users/ID/bookmarks.json`
+
+<aside class="notice"> Remember to replace "<code>ID</code>" with the desired claim ID!"</aside>
+
+### Parameter(s)
+
+Name | Usage | Default | Example | Description
+---|---|---|---|---
+page | optional | 1 | 1 | Specify which page of results to retrieve.
+limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
+
+### Header(s)
+Name | Usage | Default | Example | Description
+---|---|---|---|---
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you.
+
+<aside class="dev">The 2.5.4 REST API Docs do not list <code>session_key</code> as one of the parameters for this HTTP request... Is this an error or is this accurate? Check with tech team</aside>
+
+# Games
+
+## Profile
+
+```java
+```
+
+```python
+```
+
+```shell
+```
+
+```javascript
+```
+
+> The above code returns JSON structured like this:
+
+```json
+```
+
+This endpoint retrieves the detailed profile a specfic game.
+
+<aside class="dev">Check if this terminology is still accurate or needs to be revised.</aside>
+
+### HTTP Request
+`GET https://gametize.com/games/ID.json`
+
+<aside class="notice"> Remember to replace "<code>ID</code>" with the desired game ID!"</aside>
+
+### Header(s)
+Name | Usage | Default | Example | Description
+---|---|---|---|---
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have joined the game etc.
+
+## Challenges
+
+```java
+```
+
+```python
+```
+
+```shell
+```
+
+```javascript
+```
+
+> The above code returns JSON structured like this:
+
+```json
+```
+
+This endpoint retrieves a list of challenges in the specified game.
+
+### HTTP Request
+`GET https://gametize.com/games/ID/challenges.json`
+
+<aside class="notice"> Remember to replace "<code>ID</code>" with the desired game ID!"</aside>
+
+### Parameter(s)
+
+Name | Usage | Default | Example | Description
+---|---|---|---|---
+page | optional | 1 | 1 | Specify which page of results to retrieve.
+limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
+
+### Header(s)
+Name | Usage | Default | Example | Description
+---|---|---|---|---
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+
+## Claims
+
+## Users
+
+## Leaderboard
+
+## Leaderboard Overview
+
+## Items
+
+## Comments
+
+# Bundles
+
+## Games
+
+## Challenges
+
+## Claims
+
+## Items
+
+## Store
+
+## Users
+
+## Teams
+
+## Validate
+
+# Notifications
+
+## All
+
+## Unread
+
+# Items
+
+## Profile
+
+# Teams
+
+## Profile
+
+## Users
+
+# Login
+
+## Perform User Login
+
+## Fetch User Session Key
+
+# Action
+
+## Claim
+
+## Purchase Item
+
+## Update User
+
+## Post Comment
+
+## Like/Unlike
+
+## Accept Challenge
+
+## Follow/Unfollow User
+
+## Join/Leave
+
+## Use Item
+
+## Delete Claim
+
+## Add/Remove Bookmark
