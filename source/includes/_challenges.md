@@ -2,7 +2,7 @@
 
 Challenges are the lowest level of categorization for the Gametize platform. Challenges are activities for the user to complete, which can range from submitting a photograph and/or a text comment (*Standard Challenges*) to simply clicking on a button (*Confirmation Challenges*) to scanning a QR code (*QR Challenges*).
 
-When a User completes a challenge, it referred to as a "**claim**"". Claims can vary depending on the challenge type, since it depends on what the user has to submit to complete the challenge.
+When a User completes a challenge, it referred to as a "**claim**" Claims can vary depending on the challenge type, since it depends on what the user has to submit to complete the challenge.
 
 If a challenge is set to have non-private completions, users may view other users' activity, which allow them to vote and comment on those users' completions.
 

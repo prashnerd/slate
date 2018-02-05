@@ -204,12 +204,11 @@ limit | optional | 10 | 5 | Specify the number of results to be returned on each
 ```
 
 This endpoint retrieves the leaderboard overview of a game. Overview view types which my be returned include:
-
-1 A single array of **Top 5** users if
-  * User is in the top 5 or
-  * User has not earned any points
-2 An array of **Top 3** users *and* an array which includes the user's current position if
-  * User is not in the top 5
+1. A single array of **Top 5** users if
+  * User **is** in the top 5 or,
+  * User has not earned any points.
+2. An array of **Top 3** users *and* an array which includes the user's current position if
+  * User **is not** in the top 5.
 
 ### HTTP Request
 

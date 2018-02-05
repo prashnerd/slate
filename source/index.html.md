@@ -204,7 +204,7 @@ Gametize's current API specification is <strong>only open to paid plans</strong>
 
 And hey, here's another paragraph to *really* fill this bit out. LALALALA APIs ARE AWSOME WOOOOOOOOO. Do you like my ninja on the right? It did *not* take me all night, I swear! This introduction though. Really feels like the ramblimgs of a madman doesn't it? ***Or*** maybe that's what I *want* you to think! Isn't that *spooooooooky*? Have I written enough yet? Hmm, doesn't quite look like it is... Tell you what: I won't tell if *you* don't!
 
-To fill space To help you understand this document better, here are some examples of the types of "*alerts*" you can expect to see. 
+<s>To fill space</s> To help you understand this document better, here are some examples of the types of "*alerts*" you can expect to see. 
 
 <aside class="notice">NOTICE <em>NOTICE</em> <strong>NOTICE</strong> <strong><em>NOTICE</em></strong> </aside>
 <aside class="warning">WARNING <em>WARNING</em> <strong>WARNING</strong> <strong><em>WARNING</em></strong> </aside>

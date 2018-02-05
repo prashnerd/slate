@@ -112,9 +112,9 @@ Name | Usage | null | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specify which page of resultts to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
-user_id | **required** | 0 | 2 | Get claims in respect to a particular user in the bundle.
 type | optional | null | following | Get claims in respect to certain classification for the logged in user (session_key is required). Available options: following.
 filter | optional | null | image | filter data based on content type. Available options: image.
+user_id | **required** | 0 | 2 | Get claims in respect to a particular user in the bundle.
 
 <aside class="warning">Note that in this case the <code>user_id</code> parameter is <strong>REQUIRED</strong>! <br>Failure to provide a <code>user_id</code> parameter <b><em>will result in this API call failing</em></b>.</aside>
 
@@ -272,7 +272,7 @@ Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data with respect to you.
 
-## Bundle Validate
+## Validate User
 
 ```java
 ```

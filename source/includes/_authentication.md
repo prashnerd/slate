@@ -16,7 +16,7 @@
 
 > Make sure to replace `yourkey` with your API key!
 
-In Gametize, all applications using the API are given an **API Key** (data type: `string`). This API key is used to verify the application when a user logs in through it. All actions done by the user through the API (such as claiming, commenting, and voting) use the **session key** (data type: `string`) to identify the user. This **session key** is returned when the user logs in via the API (refer to code samples on the right). 
+In Gametize, all applications using the API are given an **API Key** (data type: `string`). This API key is used to verify the application when a user logs in through it. All actions done by the user through the API (such as claiming, commenting, and voting) use the **session key** (data type: `string`) to identify the user. This **session key** is returned when the user logs in via the API - *refer to the <a href="#login">Login</a> section for more details*. 
 
 <aside class="success"> Following proper security conventions, Gametize recommends passing in your session_key as a HTTP Request <em><strong>header</strong></em> rather than as a <em><strong>parameter</strong></em>, though both are supported.</aside>
 
