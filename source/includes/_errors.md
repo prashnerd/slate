@@ -2,7 +2,7 @@
 
 The Gametize API may return HTTP error codes, and the platform-specific meaning of each possible error code is found here. 
 
-<aside class="dev">Check for each of the possible <code>HTTP</code> error codes within the API library. The below table is brought over from the vanilla slate repository, and should not be adopted unless verified. <q>418 is <strong>legit</strong> tho</q></aside>
+<aside class="dev">Check for each of the possible <code>HTTP</code> error codes within the API library. The below table is brought over from the vanilla slate repository, and should not be adopted unless verified. 418 is <strong>legit</strong> tho</aside>
 
 
 Error Code | Meaning
