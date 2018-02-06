@@ -22,7 +22,7 @@
 This endpoint retrieves the detailed profile of an item.
 
 ### HTTP Request
-`GET https://gametize.com/api2/items/ID.json`
+`GET https://yourdomain/api2/items/ID.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired item ID!</aside>
 

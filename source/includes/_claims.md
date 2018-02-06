@@ -22,7 +22,7 @@
 This endpoint retrieves the detailed profile of a specific claim.
 
 ### HTTP Request
-`GET https://gametize.com/claims/ID.json`
+`GET https://yourdomain/claims/ID.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired claim ID!"</aside>
 
@@ -53,7 +53,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of comments on the specified claim.
 
 ### HTTP Request
-`GET https://gametize.com/users/ID/bookmarks.json`
+`GET https://yourdomain/users/ID/bookmarks.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired claim ID!"</aside>
 

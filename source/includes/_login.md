@@ -26,7 +26,7 @@ If you've been referred here from the <a href="#authentication">Authentication</
 This endpoint **logs a user** in using email and password - *registration needs to be done on <a href="https://gametize.com/">gametize.com</a>*. 
 
 ### HTTP Request
-`POST https://gametize.com/api2/login.json`
+`POST https://yourdomain/api2/login.json`
 
 <aside class="notice">Note that this is not a HTTP <code>GET</code> request like previous API calls, but a HTTP <code>POST</code>request!</aside>
 
@@ -64,7 +64,7 @@ This endpoint performs the same action as (Perform User Login[#perform-user-logi
 <aside class="success">This API call is recommended for API clients!</aside>
 
 ### HTTP Request
-`POST https://gametize.com/api2/login/session.json`
+`POST https://yourdomain/api2/login/session.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -79,4 +79,3 @@ device_token | optional | null | asjh8712871D7812jJ | The token of an iOS device
 <aside class="dev">Check whether <code>user_name</code> is actually optional or if there is some langauge ambiguity/conflict.</aside>
 
 <aside class="success">It is recommended to store user <code>session_key</code> in the API client’s system. Not only is the <code>session_key</code> required for most API requests, storing the <code>session_key</code> will make subsequent API login requests unnecessary as the <code>session_key</code> represents the validated user identity.</aside>
-

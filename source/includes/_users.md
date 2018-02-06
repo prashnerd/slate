@@ -23,7 +23,7 @@ This endpoint retrieves the detailed profile of a user, specified by ID.
 
 ### HTTP Request
 
-`GET https://gametize.com/api2/users/ID.json`
+`GET https://yourdomain/api2/users/ID.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!</aside>
 
@@ -61,7 +61,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a profile overview of a user, specified by ID. 
 
 ### HTTP Request
-`GET https://gametize.com/api2/users/ID/widget.json`
+`GET https://yourdomain/api2/users/ID/widget.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
@@ -97,7 +97,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of users **who follow the specified user**.
 
 ### HTTP Request
-`GET https://gametize.com/users/ID/followers.json`
+`GET https://yourdomain/users/ID/followers.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
@@ -134,7 +134,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of users **this user follows**.
 
 ### HTTP Request
-`GET https://gametize.com/users/ID/following.json`
+`GET https://yourdomain/users/ID/following.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
@@ -171,7 +171,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 The description of this API call goes here.
 
 ### HTTP Request
-`GET https://gametize.com/users/ID/claims.json`
+`GET https://yourdomain/users/ID/claims.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired template ID!"</aside>
 
@@ -209,7 +209,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoints retrieves the list of bundles the user is participating/has participated in.
 
 ### HTTP Request
-`GET https://gametize.com/template/ID/function.json`
+`GET https://yourdomain/template/ID/function.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired template ID!"</aside>
 
@@ -246,7 +246,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of challenges that the user has **accepted**.
 
 ### HTTP Request
-`GET https://gametize.com/users/ID/accepts.json`
+`GET https://yourdomain/users/ID/accepts.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
@@ -284,7 +284,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of challenges that the user has **bookmarked**.
 
 ### HTTP Request
-`GET https://gametize.com/users/ID/bookmarks.json`
+`GET https://yourdomain/users/ID/bookmarks.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
@@ -323,7 +323,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of items **earned** by the user. 
 
 ### HTTP Request
-`GET https://gametize.com/users/ID/items.json`
+`GET https://yourdomain/users/ID/items.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 
@@ -354,7 +354,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint gets the list of items **purchased** by the user. Note that the user is prohibited from viewing other users' purchased items.
 
 ### HTTP Request
-`GET https://gametize.com/users/ID/items_purchased.json`
+`GET https://yourdomain/users/ID/items_purchased.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
 

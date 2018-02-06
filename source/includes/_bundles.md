@@ -22,7 +22,7 @@
 This endpoint retrieves a list of games in the specified bundle.
 
 ### HTTP Request
-`GET https://gametize.com/api2/bundles/ID/game.json`
+`GET https://yourdomain/api2/bundles/ID/game.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -63,7 +63,7 @@ This endpoint returns a list of challenges in the specified bundle.
 <aside class="success">Use this API call to search for challenges, using the useful <code>keywords</code> parameter!</aside>
 
 ### HTTP Request
-`GET https://gametize.com/api2/bundles/ID/challenges.json`
+`GET https://yourdomain/api2/bundles/ID/challenges.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -103,7 +103,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint returns a list of claims for all challenges in the specified bundle.
 
 ### HTTP Request
-`GET https://gametize.com/api2/bundles/ID/claims.json`
+`GET https://yourdomain/api2/bundles/ID/claims.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -145,7 +145,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of items in the specified bundle with respect to the a user. 
 
 ### HTTP Request
-`GET https://gametize.com/api2/bundles/ID/items.json`
+`GET https://yourdomain/api2/bundles/ID/items.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -183,7 +183,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of **purchasable** items in a bundle.
 
 ### HTTP Request
-`GET https://gametize.com/api2/bundles/ID/store.json`
+`GET https://yourdomain/api2/bundles/ID/store.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -220,7 +220,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of users in the specified bundle.
 
 ### HTTP Request
-`GET https://gametize.com/api2/bundles/ID/users.json`
+`GET https://yourdomain/api2/bundles/ID/users.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -257,7 +257,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of teams in the specified bundle.
 
 ### HTTP Request
-`GET https://gametize.com/api2/bundles/ID/teams.json`
+`GET https://yourdomain/api2/bundles/ID/teams.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -294,7 +294,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves the bundle status with respect to a logged-in user. 
 
 ### HTTP Request
-`GET https://gametize.com/api2/bundles/(ID or ALIAS)/validate.json`
+`GET https://yourdomain/api2/bundles/(ID or ALIAS)/validate.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID or alias!</aside>
 
