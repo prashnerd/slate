@@ -1,4 +1,4 @@
-# Action
+# Actions
 
 ## Claim Challenge
 
@@ -20,7 +20,7 @@
 ```
 
 ### HTTP Request
-`POST https://yourdomain/api2/action/claim.json`
+`POST https://gametize.com/api2/action/claim.json`
 
 <aside class="notice">Remember, a challenge needs to be <a href="#accept-challenge">accepted</a> before it can be claimed!</aside>
 
@@ -119,7 +119,7 @@ session_key | **required** | null | 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | 
 This endpoint purchases an item available in the bundle store for the specified user.
 
 ### HTTP Request
-`POST https://yourdomain/api2/action/purchase_item.json`
+`POST https://gametize.com/api2/action/purchase_item.json`
 
 <aside class="notice">The specified user needs to have an adequate amount of credits awarded within the relevant bundle for the purchase to succeed!</aside>
 
@@ -155,7 +155,7 @@ session_key | **required** | null | 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | 
 This endpoint updates the profile of the specified user.
 
 ### HTTP Request
-`POST https://yourdomain/api2/action/update_user.json`
+`POST https://gametize.com/api2/action/update_user.json`
 
 <aside class="notice">The specified user needs to have an adequate amount of credits awarded within the relevant bundle for the purchase to succeed!</aside>
 
@@ -196,7 +196,7 @@ session_key | **required** | null | 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | 
 This endpoint posts a comment on a claim, challenge or game on behalf of a user.
 
 ### HTTP Request
-`POST https://yourdomain/api2/action/comment.json`
+`POST https://gametize.com/api2/action/comment.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -232,7 +232,7 @@ session_key | **required** | null | 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | 
 This endpoint likes/unlikes a challenge or claim for the specified user.
 
 ### HTTP Requests
-`GET https://yourdomain/api2/action/rate.json`
+`GET https://gametize.com/api2/action/rate.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -269,7 +269,7 @@ This endpoint accepts a challenge for the specified user.
 <aside class="notice">This action must be performed for/by the user before that challenge can be claimed.</aside>
 
 ### HTTP Request
-`GET https://yourdomain/api2/action/accept.json`
+`GET https://gametize.com/api2/action/accept.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -303,7 +303,7 @@ session_key | **required** | null | 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | 
 This endpoint follows/unfollows a user for the specified user.
 
 ### HTTP Request
-`GET https://yourdomain/api2/action/follow.json`
+`GET https://gametize.com/api2/action/follow.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -337,7 +337,7 @@ session_key | **required** | null | 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | 
 This endpoint joins/leaves a game for the specified user.
 
 ### HTTP Request
-`GET https://yourdomain/api2/action/join.json`
+`GET https://gametize.com/api2/action/join.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -372,7 +372,7 @@ session_key | **required** | null | 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | 
 This endpoint uses a purchased item for the specified user.
 
 ### HTTP Request
-`GET https://yourdomain/api2/action/use_item.json`
+`GET https://gametize.com/api2/action/use_item.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -406,7 +406,7 @@ session_key | **required** | null | 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | 
 This endpoint deletes a claim for the specified user.
 
 ### HTTP Request
-`GET https://yourdomain/api2/action/delete_claim.json`
+`GET https://gametize.com/api2/action/delete_claim.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -440,7 +440,7 @@ session_key | **required** | null | 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | 
 This endpoint joins/leaves a game for the specified user.
 
 ### HTTP Request
-`GET https://yourdomain/api2/action/join.json`
+`GET https://gametize.com/api2/action/join.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description

@@ -1,5 +1,7 @@
 # Bundles
 
+<aside class="dev">Rename this section to "<strong>Project</strong>"? This is presumably more familiar terminology for the end user to recognise.</aside>
+
 ## Bundle Games
 
 ```java
@@ -22,7 +24,7 @@
 This endpoint retrieves a list of games in the specified bundle.
 
 ### HTTP Request
-`GET https://yourdomain/api2/bundles/ID/game.json`
+`GET https://gametize.com/api2/bundles/ID/game.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -63,7 +65,7 @@ This endpoint returns a list of challenges in the specified bundle.
 <aside class="success">Use this API call to search for challenges, using the useful <code>keywords</code> parameter!</aside>
 
 ### HTTP Request
-`GET https://yourdomain/api2/bundles/ID/challenges.json`
+`GET https://gametize.com/api2/bundles/ID/challenges.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -73,6 +75,8 @@ Name | Usage | null | Example | Description
 page | optional | 1 | 1 | Specify which page of resultts to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 keywords | **required** | null | holiday | Specify the search keywords.
+category_id | optional | null | 2 | Filter results to only show challenges under the specified catagory.
+order | optional | null | id_asc | Sorts results by the specified order. <br>Supported orders: <ul><li>claims_asc (no. of claims, ascending), </li><li>claims_desc (no. of claims, descending), </li><li>id_asc (challenge ID, ascending), </li><li>id_desc (challenge ID descending).</li></ul>
 
 <aside class="warning">Note that in this case the <code>keywords</code> parameter is <strong>REQUIRED</strong>! <br>Failure to provide a <code>keywords</code> parameter <b><em>will result in this API call failing</em></b>.</aside>
 
@@ -103,7 +107,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint returns a list of claims for all challenges in the specified bundle.
 
 ### HTTP Request
-`GET https://yourdomain/api2/bundles/ID/claims.json`
+`GET https://gametize.com/api2/bundles/ID/claims.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -145,7 +149,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of items in the specified bundle with respect to the a user. 
 
 ### HTTP Request
-`GET https://yourdomain/api2/bundles/ID/items.json`
+`GET https://gametize.com/api2/bundles/ID/items.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -183,7 +187,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of **purchasable** items in a bundle.
 
 ### HTTP Request
-`GET https://yourdomain/api2/bundles/ID/store.json`
+`GET https://gametize.com/api2/bundles/ID/store.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -220,7 +224,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of users in the specified bundle.
 
 ### HTTP Request
-`GET https://yourdomain/api2/bundles/ID/users.json`
+`GET https://gametize.com/api2/bundles/ID/users.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -257,7 +261,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves a list of teams in the specified bundle.
 
 ### HTTP Request
-`GET https://yourdomain/api2/bundles/ID/teams.json`
+`GET https://gametize.com/api2/bundles/ID/teams.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID!</aside>
 
@@ -294,7 +298,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 This endpoint retrieves the bundle status with respect to a logged-in user. 
 
 ### HTTP Request
-`GET https://yourdomain/api2/bundles/(ID or ALIAS)/validate.json`
+`GET https://gametize.com/api2/bundles/(ID or ALIAS)/validate.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired bundle ID or alias!</aside>
 

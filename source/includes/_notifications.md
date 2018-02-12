@@ -22,7 +22,7 @@
 This endpoint retrieves the list of notifications for the specified user.
 
 ### HTTP Request
-`GET https://yourdomain/api2/notifications.json`
+`GET https://gametize.com/api2/notifications.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -58,7 +58,7 @@ Authorization | **required** | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154
 This endpoint retrieves the **number of unread notifications** for the specified user.
 
 ### HTTP Request
-`GET https://yourdomain/api2/notifications/unread.json`
+`GET https://gametize.com/api2/notifications/unread.json`
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description

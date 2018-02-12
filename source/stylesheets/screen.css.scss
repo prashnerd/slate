@@ -58,10 +58,10 @@ html, body {
   left: 0;
   bottom: 0;
   width: $nav-width;
-  background-image: url("/images/nav_bar_banner.png");
+  /*background-image: url("/images/nav_bar_banner.png");
   background-repeat: repeat-y;
-  background-attachment: scroll;
-  /*background-color: $nav-bg;*/
+  background-attachment: scroll;*/
+  background-color: $nav-bg;
   font-size: 13px;
   font-weight: bold;
 

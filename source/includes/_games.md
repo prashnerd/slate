@@ -1,5 +1,7 @@
 # Games
 
+<aside class="dev">Change the name of this endpoint/section to topic? Seems more straightforward and understandable for users <em>and</em> developers...</aside>
+
 ## Games Profile
 
 ```java
@@ -24,7 +26,7 @@ This endpoint retrieves the detailed profile a specfic game.
 <aside class="dev">Check if this endpoint is still accurate or needs to be revised.</aside>
 
 ### HTTP Request
-`GET https://yourdomain/games/ID.json`
+`GET https://gametize.com/api2/games/ID.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired game ID!"</aside>
 
@@ -52,10 +54,12 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 ```json
 ```
 
-This endpoint retrieves a list of challenges in the specified game.
+This endpoint retrieves a list of challenges in the specified game containing the specified keyword.
+
+<aside class="success">Use this endpoint to searching for challenges containing a specific keyword.</aside>
 
 ### HTTP Request
-`GET https://yourdomain/games/ID/challenges.json`
+`GET https://gametize.com/api2/games/ID/challenges.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired game ID!"</aside>
 
@@ -65,6 +69,7 @@ Name | Usage | Default | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
+order | optional | null | id_asc | Sorts results by the specified order. <br>Supported orders: <ul><li>claims_asc (no. of claims, ascending), </li><li>claims_desc (no. of claims, descending), </li><li>id_asc (challenge ID, ascending), </li><li>id_desc (challenge ID descending).</li></ul>
 
 ### Header(s)
 Name | Usage | Default | Example | Description
@@ -94,7 +99,7 @@ This endpoint retrieves a list of claims for all challenges in the specified gam
 
 ### HTTP Request
 
-`GET https://yourdomain/api2/games/ID/claims.json`
+`GET https://gametize.com/api2/api2/games/ID/claims.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired game ID!</aside>
 
@@ -134,7 +139,7 @@ This endpoint retrieves a list of users specified game.
 
 ### HTTP Request
 
-`GET https://yourdomain/api2/games/ID/users.json`
+`GET https://gametize.com/api2/games/ID/users.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired game ID!</aside>
 
@@ -172,7 +177,7 @@ This endpoint retrieves a list of players on the leaderboard for the specified g
 
 ### HTTP Request
 
-`GET https://yourdomain/api2/games/ID/leaderboard.json`
+`GET https://gametize.com/api2/games/ID/leaderboard.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired game ID!</aside>
 
@@ -212,7 +217,7 @@ This endpoint retrieves the leaderboard overview of a game. Overview view types 
 
 ### HTTP Request
 
-`GET https://yourdomain/api2/games/ID/leaderboard_overview.json`
+`GET https://gametize.com/api2/games/ID/leaderboard_overview.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired game ID!</aside>
 
@@ -248,7 +253,7 @@ This endpoint retrieves the list of items **to be earned** in the specified game
 
 ### HTTP Request
 
-`GET https://yourdomain/api2/games/ID/items.json`
+`GET https://gametize.com/api2/games/ID/items.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired game ID!</aside>
 
@@ -285,7 +290,7 @@ This endpoint retrieves the list of comments for the specified game.
 
 ### HTTP Request
 
-`GET https://yourdomain/api2/games/ID/comments.json`
+`GET https://gametize.com/api2/games/ID/comments.json`
 
 <aside class="notice">Remember to replace "<code>ID</code>" with the desired game ID!</aside>
 
