@@ -12,7 +12,7 @@
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST https://gametize.com/api2/login.json?api_key=78f89720684c4034a75b3024a4cd857f&email=player1@gametize.com&password=********
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST https://gametize.com/api2/login.json?api_key=********************************&email=player1@gametize.com&password=********
 ```
 
 >The above code returns a `session_key` enclosed within a JSON object if the user is authenticated successfully, shown below.
@@ -21,15 +21,15 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POS
 {
     "gameId": 2,
     "code": 200,
-    "sessionKey": "2-d55bd0aa-9dc1-4df9-83c2-3663cd754bed",
+    "sessionKey": "*-********-****-****-****-************",
     "firstLogin": false,
     "newRegistration": false,
     "language": "en",
     "userId": 2,
     "user": {
         "country": "UNKNOWN",
-        "photoLarge": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
-        "photoSmall": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
+        "photoLarge": "https://gametize.com/somepath/someimage.png",
+        "photoSmall": "https://gametize.com/somepath/someimage.png",
         "name": "Player 1",
         "id": 2
     }

@@ -1,6 +1,8 @@
-# Users
+# Quests
 
-## User Profile
+<aside class="dev">Change the name of this endpoint/section to topic? Seems more straightforward and understandable for users and developers alike...</aside>
+
+## Quest Profile
 
 ```java
 import java.io.**;
@@ -9,7 +11,7 @@ import java.net.HttpURLConnection;
 
 public class ApiTest {
     public static void main(String[] args) {
-        System.out.println(executeGet("https://gametize.com/api2/users/2.json"));
+        System.out.println(executeGet("https://gametize.com/api2/quests/1.json"));
     }
     
     public static String executeGet(String targetURL, String... params) {
@@ -70,18 +72,121 @@ public class ApiTest {
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/users/2.json
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/quests/1.json
 ```
 
 >The above code returns JSON structured like this:
 
 ```json
 {
-    "claimNo": 0,
-    "country": "UNKNOWN",
-    "photoLarge": "https://gametize.com/somepath/someimage.png",
+    "private": false,
+    "commentNo": 0,
     "code": 200,
-    "itemPhotos": [
+    "iconImage": "https://gametize.com/somepath/someimage.png",
+    "joined": true,
+    "questType": "standard",
+    "challengeNo": 12,
+    "userChallengeCompletedNo": 0,
+    "description": "Standard Topic Description",
+    "title": "Standard Topic",
+    "unlockable": false,
+    "id": 1,
+    "createdAtFormatted": "18 Jan 2018"
+}
+```
+
+This endpoint retrieves the **detailed profile the specified quest**.
+
+<aside class="dev">Check if this endpoint is still accurate or needs to be revised.</aside>
+
+### HTTP Request
+`GET https://gametize.com/api2/quests/ID.json`
+
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired quest ID!"</aside>
+
+### Header(s)
+Name | Usage | Default | Example | Description
+---|---|---|---|---
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have joined the quest etc.
+
+## Quest Challenges
+
+```java
+import java.io.**;
+import java.net.URL;
+import java.net.HttpURLConnection;
+
+public class ApiTest {
+    public static void main(String[] args) {
+        System.out.println(executeGet("https://gametize.com/api2/quests/1/challenges.json"));
+    }
+    
+    public static String executeGet(String targetURL, String... params) {
+        HttpURLConnection con = null;
+        // Prepare request URL
+        if (params != null) {
+            targetURL += "?";
+            for (String param : params) {
+                targetURL += param + "&";
+            }
+        }
+        try {
+            // Attempt a connection to the API server
+            URL url = new URL(targetURL);
+            con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            // Add header fields
+            con.setRequestProperty("Accept", "application/json");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("Authorization", "Bearer *-********-****-****-****-************");
+            con.setUseCaches(false);
+
+            // Get response
+            if (con.getResponseCode() == 200) {
+                // If success code is returned, use InputStream
+                InputStream input = con.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+            else {
+                // If an error code is returned, check the ErrorStream instead
+                InputStream input = con.getErrorStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (con != null) {
+                con.disconnect();
+            }
+        }
+    }
+}
+```
+
+```python
+```
+
+```javascript
+```
+
+```shell
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/quests/1/challenges.json?page=3&limit=1
+```
+
+>The above code returns JSON structured like this:
+
+```json
+{
+    "wins": [
         {
             "earned": true,
             "name": "Achievement 1",
@@ -90,305 +195,255 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
             "imageLarge": "https://gametize.com/somepath/someimage.png"
         }
     ],
-    "followingNo": 2,
-    "photoSmall": "https://gametize.com/somepath/someimage.png",
-    "followerNo": 3,
-    "itemNo": 0,
-    "points": 135,
-    "followingPhotos": [
-        {
-            "photoLarge": "https://gametize.com/somepath/someimage.png",
-            "photoSmall": "https://gametize.com/somepath/someimage.png",
-            "name": "Player 3",
-            "id": 4,
-            "followed": true
-        },
-        {
-            "photoLarge": "https://gametize.com/somepath/someimage.png",
-            "photoSmall": "https://gametize.com/somepath/someimage.png",
-            "name": "Player 2",
-            "id": 3,
-            "followed": true
-        }
-    ],
-    "followersPhotos": [
-        {
-            "photoLarge": "https://gametize.com/somepath/someimage.png",
-            "photoSmall": "https://gametize.com/somepath/someimage.png",
-            "name": "Player 4",
-            "id": 5,
-            "followed": false
-        },
-        {
-            "photoLarge": "https://gametize.com/somepath/someimage.png",
-            "photoSmall": "https://gametize.com/somepath/someimage.png",
-            "name": "Player 3",
-            "id": 4,
-            "followed": true
-        },
-        {
-            "photoLarge": "https://gametize.com/somepath/someimage.png",
-            "photoSmall": "https://gametize.com/somepath/someimage.png",
-            "name": "Player 2",
-            "id": 3,
-            "followed": true
-        }
-    ],
-    "name": "Player 1",
-    "id": 2,
-    "pointsAvailableInBundle": 0
-}
-```
-
-This endpoint retrieves the **detailed profile of the specified user**.
-
-### HTTP Request
-
-`GET https://gametize.com/api2/users/ID.json`
-
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!</aside>
-
-### Parameter(s)
-
-Name | Usage | Default | Example | Description
----|---|---|---|---
-bundle _id | optional | 0 | 3 | Get user data in respect to a bundle. For example, returns user points and items in a bundle.
-
-### Header(s)
-
-Name | Usage | Default | Example | Description
----|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data with respect to you. This includes whether you have followed this user or if this user has followed you.
-
-## User Widget
-
-```java
-import java.io.**;
-import java.net.URL;
-import java.net.HttpURLConnection;
-
-public class ApiTest {
-    public static void main(String[] args) {
-        System.out.println(executeGet("https://gametize.com/api2/users/2/widget.json"));
-    }
-    
-    public static String executeGet(String targetURL, String... params) {
-        HttpURLConnection con = null;
-        // Prepare request URL
-        if (params != null) {
-            targetURL += "?";
-            for (String param : params) {
-                targetURL += param + "&";
-            }
-        }
-        try {
-            // Attempt a connection to the API server
-            URL url = new URL(targetURL);
-            con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("GET");
-            // Add header fields
-            con.setRequestProperty("Accept", "application/json");
-            con.setRequestProperty("Content-Type", "application/json");
-            con.setRequestProperty("Authorization", "Bearer *-********-****-****-****-************");
-            con.setUseCaches(false);
-
-            // Get response
-            if (con.getResponseCode() == 200) {
-                // If success code is returned, use InputStream
-                InputStream input = con.getInputStream();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-                StringBuffer response = new StringBuffer();
-                response.append(reader.readLine());
-                reader.close();
-                return response.toString();
-            }
-            else {
-                // If an error code is returned, check the ErrorStream instead
-                InputStream input = con.getErrorStream();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-                StringBuffer response = new StringBuffer();
-                response.append(reader.readLine());
-                reader.close();
-                return response.toString();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        } finally {
-            if (con != null) {
-                con.disconnect();
-            }
-        }
-    }
-}
-```
-
-```python
-```
-
-```javascript
-```
-
-```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/users/2/widget.json
-```
-
->The above code returns JSON structured like this:
-
-```json
-{
-    "claimNo": 0,
-    "photoLarge": "https://gametize.com/somepath/someimage.png",
-    "code": 200,
-    "photoSmall": "https://gametize.com/somepath/someimage.png",
-    "name": "Player 1",
-    "id": 2,
-    "pointsAvailableInBundle": 0,
-    "points": 135
-}
-```
-
-This endpoint retrieves a **profile overview of the specified user**. 
-
-### HTTP Request
-`GET https://gametize.com/api2/users/ID/widget.json`
-
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
-
-### Parameter(s)
-Name | Usage | Default | Example | Description
----|---|---|---|---
-game_id | optional | 0 | 3 | Get user data with respect to a game.
-
-### Header(s)
-Name | Usage | Default | Example | Description
----|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data with respect to you. This includes whether you have followed this user or if this user has followed you.
-
-## Followers
-
-```java
-import java.io.**;
-import java.net.URL;
-import java.net.HttpURLConnection;
-
-public class ApiTest {
-    public static void main(String[] args) {
-        System.out.println(executeGet("https://gametize.com/api2/users/2/followers.json"));
-    }
-    
-    public static String executeGet(String targetURL, String... params) {
-        HttpURLConnection con = null;
-        // Prepare request URL
-        if (params != null) {
-            targetURL += "?";
-            for (String param : params) {
-                targetURL += param + "&";
-            }
-        }
-        try {
-            // Attempt a connection to the API server
-            URL url = new URL(targetURL);
-            con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("GET");
-            // Add header fields
-            con.setRequestProperty("Accept", "application/json");
-            con.setRequestProperty("Content-Type", "application/json");
-            con.setRequestProperty("Authorization", "Bearer *-********-****-****-****-************");
-            con.setUseCaches(false);
-
-            // Get response
-            if (con.getResponseCode() == 200) {
-                // If success code is returned, use InputStream
-                InputStream input = con.getInputStream();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-                StringBuffer response = new StringBuffer();
-                response.append(reader.readLine());
-                reader.close();
-                return response.toString();
-            }
-            else {
-                // If an error code is returned, check the ErrorStream instead
-                InputStream input = con.getErrorStream();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-                StringBuffer response = new StringBuffer();
-                response.append(reader.readLine());
-                reader.close();
-                return response.toString();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        } finally {
-            if (con != null) {
-                con.disconnect();
-            }
-        }
-    }
-}
-```
-
-```python
-```
-
-```javascript
-```
-
-```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/users/2/followers.json
-```
-
->The above code returns JSON structured like this:
-
-```json
-{
+    "game": {
+        "bannerImage": "https://gametize.com/somepath/someimage.png",
+        "private": false,
+        "teamEnabled": true,
+        "id": 2,
+        "title": "API Test Project",
+        "searchEnabled": false,
+        "guestEnabled": false
+    },
     "code": 200,
     "data": [
         {
-            "photoLarge": "https://gametize.com/somepath/someimage.png",
-            "photoSmall": "https://gametize.com/somepath/someimage.png",
-            "name": "Player 2",
-            "id": 3,
-            "followed": true
-        },
-        {
-            "photoLarge": "https://gametize.com/somepath/someimage.png",
-            "photoSmall": "https://gametize.com/somepath/someimage.png",
-            "name": "Player 3",
-            "id": 4,
-            "followed": true
-        },
-        {
-            "photoLarge": "https://gametize.com/somepath/someimage.png",
-            "photoSmall": "https://gametize.com/somepath/someimage.png",
-            "name": "Player 4",
-            "id": 5,
-            "followed": false
+            "claimNo": 4,
+            "locationOnly": false,
+            "claimed": true,
+            "title": "Photo Challenge",
+            "imageLarge": "https://gametize.com/somepath/someimage.png",
+            "photoOnly": true,
+            "createdAt": "2018-01-19 10:53:12.0",
+            "unlockable": false,
+            "ratings": 4,
+            "claimedBefore": true,
+            "repeat": false,
+            "id": 1,
+            "createdAtFormatted": "19 Jan 2018",
+            "imageType": "landscape",
+            "noPhoto": false,
+            "imageMedium": "https://gametize.com/somepath/someimage.png",
+            "privateClaim": false,
+            "commentNo": 0,
+            "bookmarked": false,
+            "ratedLike": false,
+            "adminToClaim": false,
+            "accepted": true,
+            "challengeType": "normal",
+            "challengeTypeId": 1,
+            "imageSmall": "https://gametize.com/somepath/someimage.png",
+            "likeNo": 0
         }
     ],
-    "more": false
+    "more": true,
+    "quest": {
+        "unlockable": false,
+        "private": false,
+        "questType": "standard",
+        "challengeNo": 12,
+        "userChallengeCompletedNo": 9,
+        "description": "Standard Topic Description",
+        "id": 1,
+        "title": "Standard Topic"
+    }
 }
 ```
 
-This endpoint retrieves a list of **users who follow the specified user**.
+This endpoint retrieves a list of **challenges in the specified quest**.
 
 ### HTTP Request
-`GET https://gametize.com/api2/users/ID/followers.json`
+`GET https://gametize.com/api2/quests/ID/challenges.json`
 
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired quest ID!"</aside>
+
+### Parameter(s)
+
+Name | Usage | Default | Example | Description
+---|---|---|---|---
+page | optional | 1 | 1 | Specify which page of results to retrieve.
+limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
+order | optional | null | id_asc | Sorts results by the specified order. <br>Supported orders: <ul><li>claims_asc (no. of claims, ascending), </li><li>claims_desc (no. of claims, descending), </li><li>id_asc (challenge ID, ascending), </li><li>id_desc (challenge ID descending).</li></ul>
+
+### Header(s)
+Name | Usage | Default | Example | Description
+---|---|---|---|---
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted and/or claimed the challenge.
+
+## Quest Claims
+
+```java
+import java.io.**;
+import java.net.URL;
+import java.net.HttpURLConnection;
+
+public class ApiTest {
+    public static void main(String[] args) {
+        System.out.println(executeGet("https://gametize.com/api2/quests/1/claims.json", "page=2", "limit=2"));
+    }
+    
+    public static String executeGet(String targetURL, String... params) {
+        HttpURLConnection con = null;
+        // Prepare request URL
+        if (params != null) {
+            targetURL += "?";
+            for (String param : params) {
+                targetURL += param + "&";
+            }
+        }
+        try {
+            // Attempt a connection to the API server
+            URL url = new URL(targetURL);
+            con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            // Add header fields
+            con.setRequestProperty("Accept", "application/json");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("Authorization", "Bearer *-********-****-****-****-************");
+            con.setUseCaches(false);
+
+            // Get response
+            if (con.getResponseCode() == 200) {
+                // If success code is returned, use InputStream
+                InputStream input = con.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+            else {
+                // If an error code is returned, check the ErrorStream instead
+                InputStream input = con.getErrorStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (con != null) {
+                con.disconnect();
+            }
+        }
+    }
+}
+```
+
+```python
+```
+
+```javascript
+```
+
+```shell
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/quests/1/claims.json?page=2&limit=2
+```
+
+>The above code returns JSON structured like this:
+
+```json
+{
+    "game": {
+        "bannerImage": "https://gametize.com/somepath/someimage.png",
+        "private": false,
+        "teamEnabled": true,
+        "id": 2,
+        "title": "API Test Project",
+        "searchEnabled": false,
+        "guestEnabled": false
+    },
+    "code": 200,
+    "data": [
+        {
+            "commentNo": 0,
+            "ratedLike": false,
+            "userPhotoLarge": "https://gametize.com/somepath/someimage.png",
+            "challenge": {
+                "privateClaim": false,
+                "challengeTypeId": 3,
+                "locationOnly": false,
+                "adminToClaim": false,
+                "challengeType": "prediction",
+                "id": 7,
+                "confirmation": false,
+                "title": "Prediction Challenge",
+                "photoOnly": false
+            },
+            "id": 50,
+            "createdAtFormatted": "3 days ago",
+            "userPhotoSmall": "https://gametize.com/somepath/someimage.png",
+            "userName": "Player 4",
+            "likeNo": 0,
+            "userId": 5,
+            "points": 0
+        },
+        {
+            "claimPhotoSmall": "https://gametize.com/somepath/someimage.png",
+            "commentNo": 0,
+            "claimPhotoType": "landscape",
+            "ratedLike": false,
+            "userPhotoSmall": "https://gametize.com/somepath/someimage.png",
+            "message": "My favourite!",
+            "userName": "Player 4",
+            "userId": 5,
+            "claimPhotoLarge": "https://gametize.com/somepath/someimage.png",
+            "points": 10,
+            "claimPhotoMedium": "https://gametize.com/somepath/someimage.png",
+            "userPhotoLarge": "https://gametize.com/somepath/someimage.png",
+            "challenge": {
+                "privateClaim": false,
+                "challengeTypeId": 1,
+                "locationOnly": false,
+                "adminToClaim": false,
+                "challengeType": "normal",
+                "id": 1,
+                "confirmation": false,
+                "title": "Photo Challenge",
+                "photoOnly": true
+            },
+            "id": 49,
+            "createdAtFormatted": "3 days ago",
+            "likeNo": 0
+        }
+    ],
+    "more": true,
+    "quest": {
+        "unlockable": false,
+        "private": false,
+        "questType": "standard",
+        "challengeNo": 12,
+        "description": "Standard Topic Description",
+        "id": 1,
+        "title": "Standard Topic"
+    }
+}
+```
+
+This endpoint retrieves a list of **claims for all challenges in the specified quest**.
+
+### HTTP Request
+
+`GET https://gametize.com/api2/api2/quests/ID/claims.json`
+
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired quest ID!</aside>
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
+user_id | optional | 0 | 2 | Get claims in respect to a particular user in the quest.
+filter | optional | null | image | Filter data based on content type. Available options: image.
 
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data with respect to you. This includes whether you have followed this user or if this user has followed you.
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted on the claim.
 
-## Following
+## Quest Users
 
 ```java
 import java.io.**;
@@ -397,7 +452,7 @@ import java.net.HttpURLConnection;
 
 public class ApiTest {
     public static void main(String[] args) {
-        System.out.println(executeGet("https://gametize.com/api2/users/2/following.json"));
+        System.out.println(executeGet("https://gametize.com/api2/quests/1/users.json", "page=1", "limit=2"));
     }
     
     public static String executeGet(String targetURL, String... params) {
@@ -458,7 +513,7 @@ public class ApiTest {
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/users/2/following.json
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/quests/1/users.json?page=1&limit=2
 ```
 
 >The above code returns JSON structured like this:
@@ -470,28 +525,28 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
         {
             "photoLarge": "https://gametize.com/somepath/someimage.png",
             "photoSmall": "https://gametize.com/somepath/someimage.png",
-            "name": "Player 2",
-            "id": 3,
-            "followed": true
+            "name": "Player 1",
+            "id": 2
         },
         {
             "photoLarge": "https://gametize.com/somepath/someimage.png",
             "photoSmall": "https://gametize.com/somepath/someimage.png",
-            "name": "Player 3",
-            "id": 4,
+            "name": "Player 2",
+            "id": 3,
             "followed": true
         }
     ],
-    "more": false
+    "more": true
 }
 ```
 
-This endpoint retrieves a list of **users that the specified user follows**.
+This endpoint retrieves a list of **users in the specified quest**.
 
 ### HTTP Request
-`GET https://gametize.com/api2/users/ID/following.json`
 
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
+`GET https://gametize.com/api2/quests/ID/users.json`
+
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired quest ID!</aside>
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
@@ -504,7 +559,7 @@ Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have followed this user or if this user has followed you.
 
-## Joined Games
+## Quest Leaderboard
 
 ```java
 import java.io.**;
@@ -513,7 +568,7 @@ import java.net.HttpURLConnection;
 
 public class ApiTest {
     public static void main(String[] args) {
-        System.out.println(executeGet("https://gametize.com/api2/users/2/games.json"));
+        System.out.println(executeGet("https://gametize.com/api2/quests/1/leaderboard.json", "page=1", "limit=2"));
     }
     
     public static String executeGet(String targetURL, String... params) {
@@ -574,7 +629,7 @@ public class ApiTest {
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/users/2/games.json
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/quests/1/leaderboard.json?page=1&limit=2
 ```
 
 >The above code returns JSON structured like this:
@@ -584,199 +639,43 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
     "code": 200,
     "data": [
         {
-            "bannerImage": "https://gametize.com/somepath/someimage.png",
-            "private": false,
-            "teamEnabled": false,
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
+            "name": "Player 1",
+            "rank": 1,
             "id": 2,
-            "title": "API Test Project",
-            "searchEnabled": false,
-            "guestEnabled": false
-        }
-    ],
-    "more": false
-}
-```
-
-This endpoints retrieves the list of **games the specified user is participating/has participated in**.
-
-### HTTP Request
-`GET https://gametize.com/api2/users/ID/games.json`
-
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
-
-### Parameter(s)
-Name | Usage | Default | Example | Description
----|---|---|---|---
-page | optional | 1 | 1 | Specify which page of results to retrieve.
-limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
-
-### Header(s)
-Name | Usage | Default | Example | Description
----|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have voted on the claim.
-
-## Accepted Challenges
-
->In this example, we'll be including some optional parameters in our example so that the sample JSON being displayed isn't too long. You may perform this API call with or without the optional parameters!
-
-```java
-import java.io.**;
-import java.net.URL;
-import java.net.HttpURLConnection;
-
-public class ApiTest {
-    public static void main(String[] args) {
-        System.out.println(executeGet("https://gametize.com/api2/users/2/accepts.json", "bundle_id=2", "page=1", "limit=2"));
-    }
-    
-    public static String executeGet(String targetURL, String... params) {
-        HttpURLConnection con = null;
-        // Prepare request URL
-        if (params != null) {
-            targetURL += "?";
-            for (String param : params) {
-                targetURL += param + "&";
-            }
-        }
-        try {
-            // Attempt a connection to the API server
-            URL url = new URL(targetURL);
-            con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("GET");
-            // Add header fields
-            con.setRequestProperty("Accept", "application/json");
-            con.setRequestProperty("Content-Type", "application/json");
-            con.setRequestProperty("Authorization", "Bearer *-********-****-****-****-************");
-            con.setUseCaches(false);
-
-            // Get response
-            if (con.getResponseCode() == 200) {
-                // If success code is returned, use InputStream
-                InputStream input = con.getInputStream();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-                StringBuffer response = new StringBuffer();
-                response.append(reader.readLine());
-                reader.close();
-                return response.toString();
-            }
-            else {
-                // If an error code is returned, check the ErrorStream instead
-                InputStream input = con.getErrorStream();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-                StringBuffer response = new StringBuffer();
-                response.append(reader.readLine());
-                reader.close();
-                return response.toString();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        } finally {
-            if (con != null) {
-                con.disconnect();
-            }
-        }
-    }
-}
-```
-
-```python
-```
-
-```javascript
-```
-
-```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/users/2/accepts.json?bundle_id=2&page=1&limit=2
-```
-
->The above code returns JSON structured like this:
-
-```json
-{
-    "code": 200,
-    "data": [
-        {
-            "claimNo": 4,
-            "locationOnly": false,
-            "claimed": false,
-            "title": "Photo Challenge",
-            "imageLarge": "https://gametize.com/somepath/someimage.png",
-            "photoOnly": true,
-            "createdAt": "2018-02-09 17:13:37.0",
-            "unlockable": false,
-            "ratings": 4,
-            "claimedBefore": false,
-            "repeat": false,
-            "id": 1,
-            "createdAtFormatted": "3 days ago",
-            "imageType": "landscape",
-            "noPhoto": false,
-            "imageMedium": "https://gametize.com/somepath/someimage.png",
-            "privateClaim": false,
-            "commentNo": 0,
-            "bookmarked": false,
-            "ratedLike": false,
-            "adminToClaim": false,
-            "accepted": false,
-            "challengeType": "normal",
-            "challengeTypeId": 1,
-            "imageSmall": "https://gametize.com/somepath/someimage.png",
-            "likeNo": 0
+            "points": 135
         },
         {
-            "claimNo": 4,
-            "locationOnly": false,
-            "claimed": false,
-            "title": "Standard Challenge",
-            "imageLarge": "https://gametize.com/somepath/someimage.png",
-            "photoOnly": false,
-            "createdAt": "2018-02-09 17:13:28.0",
-            "unlockable": false,
-            "ratings": 4,
-            "claimedBefore": false,
-            "repeat": false,
-            "id": 2,
-            "createdAtFormatted": "3 days ago",
-            "imageType": "landscape",
-            "noPhoto": false,
-            "imageMedium": "https://gametize.com/somepath/someimage.png",
-            "privateClaim": false,
-            "commentNo": 1,
-            "bookmarked": false,
-            "ratedLike": false,
-            "adminToClaim": false,
-            "accepted": false,
-            "challengeType": "normal",
-            "challengeTypeId": 1,
-            "imageSmall": "https://gametize.com/somepath/someimage.png",
-            "likeNo": 0
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
+            "name": "Player 3",
+            "rank": 2,
+            "id": 4,
+            "points": 120
         }
     ],
     "more": true
 }
 ```
 
-This endpoint retrieves a list of **challenges that the specified user has accepted** within the specified project.
+This endpoint retrieves a list of players on the leaderboard for the specified quest.
 
 ### HTTP Request
-`GET https://gametize.com/api2/users/ID/accepts.json`
 
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
+`GET https://gametize.com/api2/quests/ID/leaderboard.json`
+
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired quest ID!</aside>
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-bundle_id | **required** | 0 | 3 | Filter the accepted challenges by a specific bundle.
 page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
 
-### Header(s)
-Name | Usage | Default | Example | Description
----|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have claimed the challenge.
+<aside class="dev">The 2.5.4 REST API Docs do not list <code>session_key</code> as one of the parameters for this HTTP request... Is this an error or is this accurate? Check with tech team...</aside>
 
-## Bookmarked Challenges
+## Quest Leaderboard Overview
 
 ```java
 import java.io.**;
@@ -785,7 +684,7 @@ import java.net.HttpURLConnection;
 
 public class ApiTest {
     public static void main(String[] args) {
-        System.out.println(executeGet("https://gametize.com/api2/users/2/bookmarks.json", "bundle_id=2"));
+        System.out.println(executeGet("https://gametize.com/api2/quests/1/leaderboard_overiew.json", "user_id=2"));
     }
     
     public static String executeGet(String targetURL, String... params) {
@@ -846,71 +745,92 @@ public class ApiTest {
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/users/2/bookmarks.json?bundle_id=2
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/quests/1/leaderboard_overview.json?user_id=2
 ```
 
 >The above code returns JSON structured like this:
 
 ```json
 {
-    "code": 200,
-    "data": [
+    "lowestRank": {
+        "photoLarge": "https://gametize.com/somepath/someimage.png",
+        "photoSmall": "https://gametize.com/somepath/someimage.png",
+        "name": "Admin",
+        "rank": 5,
+        "alias": "admin",
+        "id": 1,
+        "points": 0
+    },
+    "mainBoard": [
         {
-            "claimNo": 0,
-            "locationOnly": false,
-            "claimed": false,
-            "title": "Flashcard!",
-            "imageLarge": "https://gametize.com/somepath/someimage.png",
-            "photoOnly": false,
-            "repeatEveryFormatted": "1 hour",
-            "createdAt": "2018-02-09 17:34:54.0",
-            "unlockable": false,
-            "ratings": 2,
-            "claimedBefore": false,
-            "repeat": true,
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
+            "name": "Player 1",
+            "rank": 1,
+            "id": 2,
+            "points": 135
+        },
+        {
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
+            "name": "Player 3",
+            "rank": 2,
+            "id": 4,
+            "points": 120
+        },
+        {
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
+            "name": "Player 2",
+            "rank": 3,
+            "id": 3,
+            "points": 71
+        },
+        {
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
+            "name": "Player 4",
+            "rank": 4,
             "id": 5,
-            "createdAtFormatted": "3 days ago",
-            "imageType": "landscape",
-            "noPhoto": false,
-            "imageMedium": "https://gametize.com/somepath/someimage.png",
-            "privateClaim": false,
-            "commentNo": 1,
-            "bookmarked": true,
-            "ratedLike": true,
-            "adminToClaim": false,
-            "accepted": true,
-            "challengeType": "non-interactive",
-            "footnote": "Flashcard Description",
-            "challengeTypeId": 4,
-            "imageSmall": "https://gametize.com/somepath/someimage.png",
-            "likeNo": 3
-        }
+            "points": 50
+        },
     ],
-    "more": false
+    "code": 200,
+    "highestRank": {
+        "photoLarge": "https://gametize.com/somepath/someimage.png",
+        "photoSmall": "https://gametize.com/somepath/someimage.png",
+        "name": "Player 1",
+        "rank": 1,
+        "id": 2,
+        "points": 135
+    }
 }
 ```
 
-This endpoint retrieves a list of **challenges that the specified user has bookmarked**.
+This endpoint retrieves the leaderboard overview of a quest. Overview view types which my be returned include:
+
+1. A single array of **Top 5** users if
+  * the user **is** in the top 5 or,
+  * the user has not earned any points.
+2. An array of **Top 3** users *and* an array which includes the user's current position if
+  * the user **is not** in the top 5.
 
 ### HTTP Request
-`GET https://gametize.com/api2/users/ID/bookmarks.json`
 
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
+`GET https://gametize.com/api2/quests/ID/leaderboard_overview.json`
+
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired quest ID!</aside>
 
 ### Parameter(s)
-
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-bundle_id | **required** | 0 | 3 | Filter the bookmarked challenges by a specific bundle.
-page | optional | 1 | 1 | Specify which page of results to retrieve.
-limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
+user_id | **required** | 0 | 2 | Get the leaderboard overview with respect to a particular user in quest.
 
-### Header(s)
-Name | Usage | Default | Example | Description
----|---|---|---|---
-Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have claimed the challenge.
+<aside class="dev">Some params are still undocumented (as of 05/02/2018); consult Gametize library source code and update here.</aside>
 
-## Earned Items
+<aside class="dev">The 2.5.4 REST API Docs do not list <code>session_key</code> as one of the parameters for this HTTP request... Is this an error or is this accurate? Check with tech team...</aside>
+
+## Quest Items
 
 ```java
 import java.io.**;
@@ -919,7 +839,7 @@ import java.net.HttpURLConnection;
 
 public class ApiTest {
     public static void main(String[] args) {
-        System.out.println(executeGet("https://gametize.com/api2/users/2/items.json"));
+        System.out.println(executeGet("https://gametize.com/api2/quests/1/items.json"));
     }
     
     public static String executeGet(String targetURL, String... params) {
@@ -980,7 +900,7 @@ public class ApiTest {
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/users/2/items.json
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/quests/1/items.json
 ```
 
 >The above code returns JSON structured like this:
@@ -990,7 +910,7 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
     "code": 200,
     "data": [
         {
-            "earned": true,
+            "earned": false,
             "name": "Achievement 1",
             "imageSmall": "https://gametize.com/somepath/someimage.png",
             "id": 4,
@@ -1001,19 +921,25 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
 }
 ```
 
-This endpoint retrieves a list of **items earned by the specified user**. 
+This endpoint retrieves the list of items **to be earned** in the specified quest. Another user's ID may be specified if 
 
 ### HTTP Request
-`GET https://gametize.com/api2/users/ID/items.json`
 
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
+`GET https://gametize.com/api2/quests/ID/items.json`
+
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired quest ID!</aside>
+
+### Parameter(s)
+Name | Usage | Default | Example | Description
+---|---|---|---|---
+user_id | required | 0 | 2 | The user_id with respect to whom the items will be retrieved.
 
 ### Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
 Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have earned this item or not.
 
-## Purchased Items
+## Quest Comments
 
 ```java
 import java.io.**;
@@ -1022,7 +948,7 @@ import java.net.HttpURLConnection;
 
 public class ApiTest {
     public static void main(String[] args) {
-        System.out.println(executeGet("https://gametize.com/api2/users/2/items_purchased.json"));
+        System.out.println(executeGet("https://gametize.com/api2/quests/1/comments.json"));
     }
     
     public static String executeGet(String targetURL, String... params) {
@@ -1083,7 +1009,7 @@ public class ApiTest {
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/users/items_purchased.json
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/quests/1/comments.json
 ```
 
 >The above code returns JSON structured like this:
@@ -1093,60 +1019,34 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
     "code": 200,
     "data": [
         {
-            "itemId": 1,
-            "name": "Reward 1",
-            "imageSmall": "https://gametize.com/somepath/someimage.png",
-            "description": "Reward 1 Description",
-            "id": 10,
-            "imageLarge": "https://gametize.com/somepath/someimage.png"
-        },
-        {
-            "itemId": 2,
-            "name": "Reward 2",
-            "imageSmall": "https://images.gametize.com/Burger.png",
-            "description": "Reward 2 Description",
-            "id": 11,
-            "imageLarge": "https://images.gametize.com/Burger.png"
-        },
-        {
-            "itemId": 3,
-            "name": "Reward 3",
-            "imageSmall": "https://images.gametize.com/Coffee.png",
-            "description": "Reward 3 Description",
-            "id": 12,
-            "imageLarge": "https://images.gametize.com/Coffee.png"
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
+            "id": 2,
+            "createdAtFormatted": "3 days ago",
+            "message": "Pretty fun!",
+            "userName": "Player 1",
+            "userId": 2
         }
     ],
-    "more": false,
-    "user": {
-        "claimNo": 0,
-        "photoLarge": "https://gametize.com/somepath/someimage.png",
-        "photoSmall": "https://gametize.com/somepath/someimage.png",
-        "name": "Player 1",
-        "id": 2,
-        "pointsAvailableInBundle": 0,
-        "points": 0
-    }
+    "more": false
 }
 ```
 
-This endpoint gets the list of **items purchased by the specified user**. Note that the user is prohibited from viewing other users' purchased items.
+This endpoint retrieves the list of comments for the specified quest.
 
 ### HTTP Request
-`GET https://gametize.com/api2/users/ID/items_purchased.json`
 
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired user ID!"</aside>
+`GET https://gametize.com/api2/quests/ID/comments.json`
+
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired quest ID!</aside>
 
 ### Parameter(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-page | optional | 1 | 1 | Specifies which page of results to retrieve.
+page | optional | 1 | 1 | Specify which page of results to retrieve.
 limit | optional | 10 | 5 | Specify the number of results to be returned on each page.
-bundle_id | optional | 0 | 3 | Filter the purchased items by a specific bundle.
 
-### Header(s)
+## Header(s)
 Name | Usage | Default | Example | Description
 ---|---|---|---|---
-Authorization | **required** | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have earned this item or not.
-
-<aside class="warning">Note that in this case the <code>session_key</code> for a user is <strong>REQUIRED</strong>! <br>Failure to provide a valid <code>session_key</code> <b><em>will result in this API call failing</em></b>.</aside>
+Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113ed7 | Get data pertaining to you. This includes whether you have earned this item or not.

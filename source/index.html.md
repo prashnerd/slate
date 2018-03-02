@@ -17,8 +17,8 @@ includes:
   - challenges
   - users
   - claims
+  - quests
   - games
-  - bundles
   - notifications
   - items
   - teams
@@ -198,17 +198,12 @@ search: true
                                                                               
 ```
 
-<aside class="warning">
-Gametize's current API specification is <strong>only open to paid plans</strong>, and the instructions below are only applicable to those users. Don't worry though: the platform will soon be open to all!
+The Gametize API is meant for developers who are keen to create their own client applications making use of the Gametize platform. 
+
+<aside class="warning">Gametize's current API specification is <strong>only open to paid plans</strong>, and the instructions below are only applicable to those users. Don't worry though: the platform will soon be open to all!
 </aside>
 
-**Introduction to Gametize API** Here are some fluffy words for introducing the Gametize API and explaining how it should be used. This section has been deliberately made longer so that we can see how it looks like when there's more text.
-
-And hey, here's another paragraph to *really* fill this bit out. LALALALA APIs ARE AWSOME WOOOOOOOOO. Do you like my ninja on the right? It did *not* take me all night, I swear! 
-
-I think that should do it for placeholder text... Enjoy the rest of the documentation!
-
-<s>To fill space</s> To help you understand this document better, here are some examples of the types of "*alerts*" you can expect to see. 
+To help you understand this document better, here are some examples of the types of "alerts" you can expect to see. 
 
 <aside class="notice">These <em>calming, unbotrusive cyan alerts</em> provide notices or information about the content preceding them. For example, these notices may be used to remind you of certain actions you may need to perform to get a particular API call to work.</aside>
 <aside class="warning">These <strong>scary red alerts</strong> warn you about certain conditions that need to be fulfilled for the API to work, or they may warn you about certain things you should take care of. For example, these warnings may warn you about some special requirements for an API call.</aside>
@@ -226,8 +221,8 @@ To aid in platform administration, Gametize has **redefined terms** found in the
 
 Name in API | Name in Admin Dashboard
 :---:|:---:
-Bundle | Project
-Game | Topic
+Bundle | Game
+Game | Quest
 Challenge | Challenge (unchanged)
 
 <aside class="dev">Update all the warnings for <code>session_key</code> to reflect the new "Authorization-Bearer" schema. EDIT: should be done already, but check to make sure.</aside>

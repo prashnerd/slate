@@ -19,6 +19,24 @@ Here are the possible challenge types (classified by which platforms they are av
   * QR Code Challenge - Users scan a QR code via the app.
   * Custom Behaviour (API) Challenge.
 
+The following table specifies the identifiers for the different challenge types:
+
+Name | `challengeType` | `challengeTypeId`
+---|:---:|:---:
+Standard Challenge | normal | 1
+Single-attempt Quiz Challenge | quiz | 2
+Prediction Challenge | prediction | 3
+Flashcard| non-interactive | 4
+Video Challenge | video | 5
+Behaviour (API) Challenge | api | 6
+QR Challenge| qr | 7
+Passcode Challenge | key | 9
+Multiple-attempt Quiz Challenge | quiz-repeat | 10
+Poll Challenge | survey | 11
+Invitation/Referral Challenge | invitation | 12
+Multi-Field Challenge | multi-field | 13
+Personality Quiz Challenge | personality-quiz | 14
+
 When a user completes a challenge, it referred to as a "**claim**" Claims can vary depending on the challenge type, since it depends on what the user has to submit to complete the challenge. Documentation for performing claims can be found <a href="#claim-challenge">here</a>.
 
 If a challenge is set to have non-private completions, users may view other users' activity, which allow them to vote and comment on those users' completions.
@@ -30,6 +48,65 @@ Collecting the data from claims, votes, and comments on a challenge can be a rat
 ## Challenge Profile
 
 ```java
+import java.io.**;
+import java.net.URL;
+import java.net.HttpURLConnection;
+
+public class ApiTest {
+    public static void main(String[] args) {
+        System.out.println(executeGet("https://gametize.com/api2/challenges/5.json"));
+    }
+    
+    public static String executeGet(String targetURL, String... params) {
+        HttpURLConnection con = null;
+        // Prepare request URL
+        if (params != null) {
+            targetURL += "?";
+            for (String param : params) {
+                targetURL += param;
+                targetURL += "&";
+            }
+        }
+        try {
+            // Attempt a connection to the API server
+            URL url = new URL(targetURL);
+            con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            // Add header fields
+            con.setRequestProperty("Accept", "application/json");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("Authorization", "Bearer *-********-****-****-****-************");
+            con.setUseCaches(false);
+
+            // Get response
+            if (con.getResponseCode() == 200) {
+                // If success code is returned, use InputStream
+                InputStream input = con.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+            else {
+                // If an error code is returned, check the ErrorStream instead
+                InputStream input = con.getErrorStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (con != null) {
+                con.disconnect();
+            }
+        }
+    }
+}
 ```
 
 ```python
@@ -39,16 +116,16 @@ Collecting the data from claims, votes, and comments on a challenge can be a rat
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer 1-010356ce-ffbd-4c18-b1da-b0dc71648785" -X GET https://gametize.com/api2/challenges/2.json
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/challenges/5.json
 ```
 
 >The above code returns JSON structured like this:
 
 ```json
 {
-    "claimNo": 4,
+    "claimNo": 0,
     "game": {
-        "bannerImage": "https://images.gametize.com/Form.png",
+        "bannerImage": "https://gametize.com/somepath/someimage.png",
         "private": false,
         "teamEnabled": true,
         "id": 2,
@@ -59,51 +136,51 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
     "code": 200,
     "locationOnly": false,
     "claimed": false,
-    "title": "Standard Challenge",
-    "imageLarge": "http://gblank.dev:8080/images/core/placeholders/placeholder_challenge_image_normal.png",
+    "title": "Flashcard!",
+    "imageLarge": "https://gametize.com/somepath/someimage.png",
     "photoOnly": false,
+    "repeatEveryFormatted": "1 hour",
     "quest": {
-        "bannerImage": "https://s3-ap-southeast-1.amazonaws.com/prasanth-imagelib/Globe.png",
         "unlockable": false,
         "private": false,
         "questType": "standard",
-        "challengeNo": 12,
+        "challengeNo": 11,
         "description": "Standard Topic Description",
         "id": 1,
         "title": "Standard Topic"
     },
-    "createdAt": "2018-01-19 15:06:57.0",
+    "createdAt": "2018-02-08 11:28:59.0",
     "unlockable": false,
-    "ratings": 4,
+    "ratings": 2,
     "claimedBefore": false,
-    "previousChallengeId": 5,
-    "repeat": false,
-    "id": 2,
-    "createdAtFormatted": "19 Jan 2018",
+    "repeat": true,
+    "id": 5,
+    "createdAtFormatted": "08 Feb 2018",
     "imageType": "landscape",
     "noPhoto": false,
-    "imageMedium": "http://gblank.dev:8080/images/core/placeholders/placeholder_challenge_image_normal.png",
+    "imageMedium": "https://gametize.com/somepath/someimage.png",
     "privateClaim": false,
     "commentNo": 1,
-    "nextChallengeId": 1,
-    "bookmarked": false,
-    "ratedLike": false,
+    "nextChallengeId": 2,
+    "bookmarked": true,
+    "ratedLike": true,
     "adminToClaim": false,
-    "accepted": false,
-    "challengeType": "normal",
-    "challengeTypeId": 1,
-    "imageSmall": "http://gblank.dev:8080/images/core/placeholders/placeholder_challenge_image_normal.png",
-    "likeNo": 0
+    "accepted": true,
+    "challengeType": "non-interactive",
+    "footnote": "Flashcard Description",
+    "challengeTypeId": 4,
+    "imageSmall": "https://gametize.com/somepath/someimage.png",
+    "likeNo": 3
 }
 ```
 
-This endpoint retrieves the detailed profile of a specific challenge identified by the challenge ID.
+This endpoint retrieves the **detailed profile of the specific challenge** identified by the challenge ID.
 
 ### HTTP Request
 
 `GET https://gametize.com/api2/challenges/ID.json`
 
-<aside class="notice">Remember to replace "<code>ID</code>" with the desired challenge ID!"</aside>
+<aside class="notice">Remember to replace "<code>ID</code>" with the desired challenge ID!</aside>
 
 ### Header(s)
 
@@ -114,6 +191,64 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 ## Challenge Claims
 
 ```java
+import java.io.**;
+import java.net.URL;
+import java.net.HttpURLConnection;
+
+public class ApiTest {
+    public static void main(String[] args) {
+        System.out.println(executeGet("https://gametize.com/api2/challenges/5/claims.json", "page=2", "limit=2"));
+    }
+    
+    public static String executeGet(String targetURL, String... params) {
+        HttpURLConnection con = null;
+        // Prepare request URL
+        if (params != null) {
+            targetURL += "?";
+            for (String param : params) {
+                targetURL += param + "&";
+            }
+        }
+        try {
+            // Attempt a connection to the API server
+            URL url = new URL(targetURL);
+            con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            // Add header fields
+            con.setRequestProperty("Accept", "application/json");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("Authorization", "Bearer *-********-****-****-****-************");
+            con.setUseCaches(false);
+
+            // Get response
+            if (con.getResponseCode() == 200) {
+                // If success code is returned, use InputStream
+                InputStream input = con.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+            else {
+                // If an error code is returned, check the ErrorStream instead
+                InputStream input = con.getErrorStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (con != null) {
+                con.disconnect();
+            }
+        }
+    }
+}
 ```
 
 ```python
@@ -123,7 +258,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer 1-010356ce-ffbd-4c18-b1da-b0dc71648785" -X GET https://gametize.com/api2/challenges/2/claims.json?page=2&limit=2
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/challenges/2/claims.json?page=2&limit=2
 ```
 
 >The above code returns JSON structured like this:
@@ -131,7 +266,7 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
 ```json
 {
     "game": {
-        "bannerImage": "https://images.gametize.com/Form.png",
+        "bannerImage": "https://gametize.com/somepath/someimage.png",
         "private": false,
         "teamEnabled": true,
         "id": 2,
@@ -144,7 +279,7 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
         {
             "commentNo": 1,
             "ratedLike": false,
-            "userPhotoLarge": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
+            "userPhotoLarge": "https://gametize.com/somepath/someimage.png",
             "challenge": {
                 "privateClaim": false,
                 "challengeTypeId": 1,
@@ -158,7 +293,7 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
             },
             "id": 32,
             "createdAtFormatted": "2 days ago",
-            "userPhotoSmall": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
+            "userPhotoSmall": "https://gametize.com/somepath/someimage.png",
             "message": "Cool Stuff!",
             "userName": "Player 2",
             "likeNo": 1,
@@ -168,7 +303,7 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
         {
             "commentNo": 0,
             "ratedLike": false,
-            "userPhotoLarge": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
+            "userPhotoLarge": "https://gametize.com/somepath/someimage.png",
             "challenge": {
                 "privateClaim": false,
                 "challengeTypeId": 1,
@@ -182,7 +317,7 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
             },
             "id": 23,
             "createdAtFormatted": "2 days ago",
-            "userPhotoSmall": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
+            "userPhotoSmall": "https://gametize.com/somepath/someimage.png",
             "message": "Awesome!",
             "userName": "Player 1",
             "likeNo": 1,
@@ -192,7 +327,7 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
     ],
     "more": false,
     "quest": {
-        "bannerImage": "https://s3-ap-southeast-1.amazonaws.com/prasanth-imagelib/Globe.png",
+        "bannerImage": "https://gametize.com/somepath/someimage.png",
         "unlockable": false,
         "private": false,
         "questType": "standard",
@@ -206,7 +341,7 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
 
 >In this example, we used the `page` and `limit` parameter to show you how it should be used and how the return would look, and to truncate how much data is being fetched so this section remains readable (which is similar to why you might use it in your own application).
 
-This endpoint retrieves the list of claims for a challenge filtered by the given parameters. 
+This endpoint retrieves the list of **claims for the specified challenge** filtered by the given parameters. 
 
 ### HTTP Request
 
@@ -231,6 +366,64 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 ## Challenge Comments
 
 ```java
+import java.io.**;
+import java.net.URL;
+import java.net.HttpURLConnection;
+
+public class ApiTest {
+    public static void main(String[] args) {
+        System.out.println(executeGet("https://gametize.com/api2/challenges/5/comments.json"));
+    }
+    
+    public static String executeGet(String targetURL, String... params) {
+        HttpURLConnection con = null;
+        // Prepare request URL
+        if (params != null) {
+            targetURL += "?";
+            for (String param : params) {
+                targetURL += param + "&";
+            }
+        }
+        try {
+            // Attempt a connection to the API server
+            URL url = new URL(targetURL);
+            con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            // Add header fields
+            con.setRequestProperty("Accept", "application/json");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("Authorization", "Bearer *-********-****-****-****-************");
+            con.setUseCaches(false);
+
+            // Get response
+            if (con.getResponseCode() == 200) {
+                // If success code is returned, use InputStream
+                InputStream input = con.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+            else {
+                // If an error code is returned, check the ErrorStream instead
+                InputStream input = con.getErrorStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (con != null) {
+                con.disconnect();
+            }
+        }
+    }
+}
 ```
 
 ```python
@@ -240,7 +433,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer 1-010356ce-ffbd-4c18-b1da-b0dc71648785" -X GET https://gametize.com/api2/challenges/2/comments.json
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" -X GET https://gametize.com/api2/challenges/2/comments.json
 ```
 
 >The above code returns JSON structured like this:
@@ -250,8 +443,8 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
     "code": 200,
     "data": [
         {
-            "photoLarge": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
-            "photoSmall": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
             "id": 5,
             "createdAtFormatted": "2 days ago",
             "message": "Has everyone done this?? LOL",
@@ -263,7 +456,7 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
 }
 ```
 
-This endpoint retrieves the comments on the specified challenge.
+This endpoint retrieves a list of **comments on the specified challenge**.
 
 ### HTTP Request
 
@@ -285,9 +478,67 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 
 ## Challenge Leaderboard
 
->Do note that you would rarely need to call the leaderboard API from the challenge level unless your targeted project makes use of it. You may refer to the <a href="#game-leaderboard">topic-level</a> or <a href="bundle-leaderboard">project-level</a> leaderboard API calls if they are more relevant to you. 
+>Do note that you would rarely need to call the leaderboard API from the challenge level unless your targeted project makes use of it. You may refer to the <a href="#quest-leaderboard">quest-level</a> or <a href="bundle-leaderboard">project-level</a> leaderboard API calls if they are more relevant to you. 
 
 ```java
+import java.io.**;
+import java.net.URL;
+import java.net.HttpURLConnection;
+
+public class ApiTest {
+    public static void main(String[] args) {
+        System.out.println(executeGet("https://gametize.com/api2/challenges/5/leaderboard.json"));
+    }
+    
+    public static String executeGet(String targetURL, String... params) {
+        HttpURLConnection con = null;
+        // Prepare request URL
+        if (params != null) {
+            targetURL += "?";
+            for (String param : params) {
+                targetURL += param + "&";
+            }
+        }
+        try {
+            // Attempt a connection to the API server
+            URL url = new URL(targetURL);
+            con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            // Add header fields
+            con.setRequestProperty("Accept", "application/json");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("Authorization", "Bearer *-********-****-****-****-************");
+            con.setUseCaches(false);
+
+            // Get response
+            if (con.getResponseCode() == 200) {
+                // If success code is returned, use InputStream
+                InputStream input = con.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+            else {
+                // If an error code is returned, check the ErrorStream instead
+                InputStream input = con.getErrorStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (con != null) {
+                con.disconnect();
+            }
+        }
+    }
+}
 ```
 
 ```python
@@ -297,7 +548,7 @@ Authorization | optional | null | Bearer 2073-02fde5e7-097a-4971-a4d4-de7154113e
 ```
 
 ```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer 1-010356ce-ffbd-4c18-b1da-b0dc71648785" GET https://gametize.com/api2/challenges/2/leaderbaord.json
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer *-********-****-****-****-************" GET https://gametize.com/api2/challenges/2/leaderbaord.json
 ```
 
 >The above code returns JSON structured like this:
@@ -307,32 +558,32 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
     "code": 200,
     "data": [
         {
-            "photoLarge": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
-            "photoSmall": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
             "name": "Player 1",
             "rank": 1,
             "id": 2,
             "points": 11
         },
         {
-            "photoLarge": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
-            "photoSmall": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
             "name": "Player 2",
             "rank": 2,
             "id": 3,
             "points": 11
         },
         {
-            "photoLarge": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
-            "photoSmall": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
             "name": "Player 3",
             "rank": 3,
             "id": 4,
             "points": 10
         },
         {
-            "photoLarge": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
-            "photoSmall": "http://gblank.dev:8080/images/core/consumer/game/placeholders/default_avatar.png",
+            "photoLarge": "https://gametize.com/somepath/someimage.png",
+            "photoSmall": "https://gametize.com/somepath/someimage.png",
             "name": "Player 4",
             "rank": 4,
             "id": 5,
@@ -345,7 +596,7 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Au
 
 >Note that the `"more"` flag indicates if there are more entries in the leaderboard. This can be especially useful if you are using the `page` and `limit` parameters and need to know if more pages need to be displayed!
 
-This endpoint retrieves a list of users on the leaderboard of the specified challenge.
+This endpoint retrieves a list of **users on the leaderboard of the specified challenge**.
 
 ### HTTP Request
 

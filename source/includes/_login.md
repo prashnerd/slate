@@ -6,17 +6,77 @@ If you've been referred here from the <a href="#authentication">Authentication</
 
 ## Perform User Login
 
+>The password parameter in this example is obfuscated in this example, but make sure you include the proper password in your own requests!
+
 ```java
+import java.io.**;
+import java.net.URL;
+import java.net.HttpURLConnection;
+
+public class ApiTest {
+    public static void main(String[] args) {
+        System.out.println(executePost("https://gametize.com/api2/login.json", "api_key=********************************", "email=player1@gametize.com", "password=********"));
+    }
+    
+    public static String executePost(String targetURL, String... params) {
+        HttpURLConnection con = null;
+        // Prepare request URL
+        if (params != null) {
+            targetURL += "?";
+            for (String param : params) {
+                targetURL += param + "&";
+            }
+        }
+        try {
+            // Attempt a connection to the API server
+            URL url = new URL(targetURL);
+            con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("POST");
+            // Add header fields
+            con.setRequestProperty("Accept", "application/json");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("Authorization", "Bearer *-********-****-****-****-************");
+            con.setUseCaches(false);
+
+            // Get response
+            if (con.getResponseCode() == 201) {
+                // If success code is returned, use InputStream
+                InputStream input = con.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+            else {
+                // If an error code is returned, check the ErrorStream instead
+                InputStream input = con.getErrorStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+                StringBuffer response = new StringBuffer();
+                response.append(reader.readLine());
+                reader.close();
+                return response.toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (con != null) {
+                con.disconnect();
+            }
+        }
+    }
+}
 ```
 
 ```python
 ```
 
-```shell
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST http://gametize.com/api2/login.json?api_key=********************************&email=someone@somedomain.com&password=********
+```javascript
 ```
 
-```javascript
+```shell
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST http://gametizeblank.com:8080/api2/login.json?api_key=********************************&email=player1@gametize.com&password=********
 ```
 
 >The above code returns JSON structured like this:
@@ -32,17 +92,19 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POS
     "userId": *,
     "user": {
         "country": "UNKNOWN",
-        "photoLarge": "http://somedomain/images/playeravatarlarge.png",
-        "photoSmall": "http://somedomain/images/playeravatarsmall.png",
+        "photoLarge": "https://gametize.com/somepath/someimage.png",
+        "photoSmall": "https://gametize.com/somepath/someimage.png",
         "name": "firstName lastName",
         "id": *
     }
 }
 ```
 
-This endpoint **logs a user** in using email and password.
+This endpoint **logs a user in** using email and password.
 
 <aside class="success">Register your users on <a href="https://gametize.com/">gametize.com/</a>, or using the <a href="#register-user">user registration</a> API call in your application!</aside>
+
+<aside class="dev">This endpoint currently returns response code <code>200</code> in the JSON model, but the server responds with a <code>201</code> code by default for POST requests, some cleanup/overriding may be necessary, so keep that in mind!</aside>
 
 ### HTTP Request
 `POST https://gametize.com/api2/login.json`
